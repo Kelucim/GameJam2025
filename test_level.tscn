@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://d10cy0akfashq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hsoxx"]
+albedo_color = Color(0.252028, 0.252028, 0.252028, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hsoxx"]
+material = SubResource("StandardMaterial3D_hsoxx")
+size = Vector3(100, 1, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gojnm"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="Environment" id="Environment_hsoxx"]
+background_mode = 1
+background_color = Color(0.651673, 0.767033, 1, 1)
+
+[node name="TestLevel" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_hsoxx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_gojnm")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hsoxx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.196271, 0.98055, 0, -0.98055, -0.196271, 0, 0, 0)
