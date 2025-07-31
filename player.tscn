@@ -8,6 +8,7 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 
 [node name="Player" type="CharacterBody3D"]
+process_mode = 1
 script = ExtResource("1_4flbx")
 
 [node name="PlayerCamera" type="Camera3D" parent="."]
