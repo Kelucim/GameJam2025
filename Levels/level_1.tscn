@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bee37yfm0h2vl"]
+[gd_scene load_steps=7 format=3 uid="uid://bee37yfm0h2vl"]
 
 [ext_resource type="PackedScene" uid="uid://d10cy0akfashq" path="res://test_level.tscn" id="1_n0qsc"]
 [ext_resource type="Script" uid="uid://dq7pxm17rth7q" path="res://Levels/level.gd" id="1_rf6l5"]
@@ -6,17 +6,25 @@
 [ext_resource type="PackedScene" uid="uid://dbfwgliq2746w" path="res://Enemies/enemy.tscn" id="3_3mhv4"]
 [ext_resource type="PackedScene" uid="uid://it1xaooa30r5" path="res://Levels/LevelAssets/exit_door.tscn" id="5_syshm"]
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_syshm"]
+vertices = PackedVector3Array(-49.5, 1, -49.5, -49.5, 1, 49.5, 49.5, 1, 49.5, 49.5, 1, -49.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
 [node name="Level1" type="Node"]
 script = ExtResource("1_rf6l5")
 number_of_enemies = 1
 
-[node name="TestLevel" parent="." instance=ExtResource("1_n0qsc")]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_syshm")
+
+[node name="TestLevel" parent="NavigationRegion3D" instance=ExtResource("1_n0qsc")]
 
 [node name="Player" parent="." instance=ExtResource("2_dilhk")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.22102, 0)
 
 [node name="Enemy" parent="." instance=ExtResource("3_3mhv4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24865, -9.50673)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24865, -9.47314)
 
 [node name="ExitDoor" parent="." instance=ExtResource("5_syshm")]
 transform = Transform3D(0.180553, 0, 0.983565, 0, 1, 0, -0.983565, 0, 0.180553, 0, 2, 7.9008)

@@ -1,20 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbfwgliq2746w"]
+[gd_scene load_steps=10 format=3 uid="uid://dbfwgliq2746w"]
 
-[ext_resource type="Script" uid="uid://dkqeiviq4jrkw" path="res://Enemies/enemy.gd" id="1_3ih25"]
+[ext_resource type="Script" uid="uid://c32jk74x3yyu6" path="res://Enemies/enemy.gd" id="1_bxkaj"]
 [ext_resource type="PackedScene" uid="uid://dov2nsy6wbhgj" path="res://Enemies/hit_box.tscn" id="2_bxkaj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_47qgu"]
 height = 1.5
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_bxkaj"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_572h1"]
 height = 1.5
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_bxkaj"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_rt1x0"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_47qgu"]
+[sub_resource type="SphereMesh" id="SphereMesh_8wvsg"]
 
-[node name="Enemy" type="Node3D"]
-script = ExtResource("1_3ih25")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bxkaj"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_47qgu"]
+material = SubResource("StandardMaterial3D_bxkaj")
+height = 0.2
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bxkaj"]
+
+[node name="Enemy" type="CharacterBody3D" groups=["enemies"]]
+script = ExtResource("1_bxkaj")
 
 [node name="HitBox" parent="." instance=ExtResource("2_bxkaj")]
 
@@ -22,14 +31,22 @@ script = ExtResource("1_3ih25")
 shape = SubResource("CapsuleShape3D_47qgu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="HitBox"]
-mesh = SubResource("CapsuleMesh_bxkaj")
+mesh = SubResource("CapsuleMesh_572h1")
 
 [node name="HitBox2" parent="." instance=ExtResource("2_bxkaj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16642, 0)
 is_crit = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox2"]
-shape = SubResource("SphereShape3D_bxkaj")
+shape = SubResource("SphereShape3D_rt1x0")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="HitBox2"]
-mesh = SubResource("SphereMesh_47qgu")
+mesh = SubResource("SphereMesh_8wvsg")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="HitBox2/MeshInstance3D2" groups=["enemies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+mesh = SubResource("CylinderMesh_47qgu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_bxkaj")
