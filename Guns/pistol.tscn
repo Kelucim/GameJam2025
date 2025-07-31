@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwpmbvt3os8oh"]
+
+[ext_resource type="Script" uid="uid://cr4kpmuxspurl" path="res://Guns/gun.gd" id="1_gxrfj"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_soq8o"]
+radius = 0.1
+height = 1.0
+
+[node name="Pistol" type="Node3D"]
+script = ExtResource("1_gxrfj")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(0.999743, 0, 0.0226873, 0, 1, 0, -0.0226873, 0, 0.999743, 0.226, -0.269, -0.464)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_soq8o")
+skeleton = NodePath("../..")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control/CenterContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2

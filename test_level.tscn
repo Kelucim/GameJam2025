@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d10cy0akfashq"]
+[gd_scene load_steps=8 format=3 uid="uid://d10cy0akfashq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hsoxx"]
 albedo_color = Color(0.252028, 0.252028, 0.252028, 1)
@@ -10,9 +10,24 @@ size = Vector3(100, 1, 100)
 [sub_resource type="BoxShape3D" id="BoxShape3D_gojnm"]
 size = Vector3(100, 1, 100)
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hsoxx"]
+sky_top_color = Color(0.401676, 0.57128, 0.939986, 1)
+sky_horizon_color = Color(0.94902, 0.85098, 0.67451, 1)
+sky_curve = 0.0294219
+sun_angle_max = 87.97
+
+[sub_resource type="Sky" id="Sky_gojnm"]
+sky_material = SubResource("ProceduralSkyMaterial_hsoxx")
+
 [sub_resource type="Environment" id="Environment_hsoxx"]
-background_mode = 1
+background_mode = 2
 background_color = Color(0.651673, 0.767033, 1, 1)
+sky = SubResource("Sky_gojnm")
+ambient_light_source = 3
+ambient_light_color = Color(0.869602, 0.582285, 0.129683, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gojnm"]
+material = SubResource("StandardMaterial3D_hsoxx")
 
 [node name="TestLevel" type="Node3D"]
 
@@ -29,3 +44,8 @@ environment = SubResource("Environment_hsoxx")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.196271, 0.98055, 0, -0.98055, -0.196271, 0, 0, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.04799, 0)
+mesh = SubResource("BoxMesh_gojnm")
+skeleton = NodePath("../MeshInstance3D")

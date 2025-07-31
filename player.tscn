@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsiesba77e41y"]
+[gd_scene load_steps=5 format=3 uid="uid://dsiesba77e41y"]
 
 [ext_resource type="Script" uid="uid://crjw5k33bbyd7" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://bwpmbvt3os8oh" path="res://Guns/pistol.tscn" id="2_onrkg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
@@ -9,11 +10,22 @@
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_4flbx")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.600549, 0)
+[node name="PlayerCamera" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="GunPosition" type="Node3D" parent="PlayerCamera"]
+
+[node name="Pistol" parent="PlayerCamera/GunPosition" instance=ExtResource("2_onrkg")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_sh265")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_sh265")
+
+[node name="DashTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
