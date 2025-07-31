@@ -43,7 +43,7 @@ func _input(event: InputEvent) -> void:
 	rotation.y = rotation_y
 	%PlayerCamera.rotation.x = rotation_x
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_pressed("ui_text_clear_carets_and_selection"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 

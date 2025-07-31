@@ -14,7 +14,7 @@ func _ready() -> void:
 	%ReloadTimer.wait_time = reload_speed
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if (ammo == 0 or Input.is_action_just_pressed("reload")) and !reloading:
 		reloading = true
 		%ReloadTimer.start()
