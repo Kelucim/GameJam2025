@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
 
-const SPEED = 10.0
-const JUMP_VELOCITY = 100
+const SPEED = 5.0
+const JUMP_VELOCITY = 10
 
 var mouse_sensitivity = 0.5
 var can_dash := true

@@ -25,4 +25,3 @@ func died():
 
 func target_position(target):
 	look_at(target)
-	print_debug(target)

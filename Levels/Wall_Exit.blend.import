@@ -38,8 +38,7 @@ _subresources={
 "generate/physics": true
 },
 "PATH:Wall_exit/Door_exit": {
-"generate/physics": true,
-"physics/body_type": 1
+"generate/physics": true
 }
 }
 }
