@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 const SPEED = 5.0
-const JUMP_VELOCITY = 10
+const JUMP_VELOCITY = 100
 
 var mouse_sensitivity = 0.5
 var can_dash := true
@@ -26,11 +26,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
-	if Input.is_action_just_pressed("dash") and can_dash:
-		can_dash = false
-		%DashTimer.start()
-		velocity.x = direction.x * JUMP_VELOCITY
-		velocity.z = direction.z * JUMP_VELOCITY
+	#if Input.is_action_just_pressed("dash") and can_dash:
+		#can_dash = false
+		#%DashTimer.start()
+		#velocity.x = direction.x * JUMP_VELOCITY
+		#velocity.z = direction.z * JUMP_VELOCITY
 		
 	move_and_slide()
 
@@ -44,7 +44,7 @@ func _input(event: InputEvent) -> void:
 	%PlayerCamera.rotation.x = rotation_x
 	
 func _process(_delta: float) -> void:
-	if Input.is_action_pressed("ui_text_clear_carets_and_selection"):
+	if Input.is_action_just_pressed("pause"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 

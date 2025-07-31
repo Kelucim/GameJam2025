@@ -24,4 +24,4 @@ func died():
 	self.queue_free()
 
 func target_position(target):
-	look_at(target)
+	look_at(Vector3(target.x, position.y, target.z))
