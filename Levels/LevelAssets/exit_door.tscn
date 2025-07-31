@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://it1xaooa30r5"]
+
+[ext_resource type="Script" uid="uid://0lv0v2v4wspi" path="res://Levels/LevelAssets/exit_door.gd" id="1_x6kpj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_htbm0"]
+size = Vector3(0.5, 2.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x6kpj"]
+size = Vector3(0.5, 2.2, 1)
+
+[node name="ExitDoor" type="Node3D"]
+script = ExtResource("1_x6kpj")
+
+[node name="LoadArea" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 3
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LoadArea"]
+shape = SubResource("BoxShape3D_htbm0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_x6kpj")
+
+[connection signal="body_entered" from="LoadArea" to="." method="_on_load_area_body_entered"]

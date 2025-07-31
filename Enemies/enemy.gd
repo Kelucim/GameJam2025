@@ -19,4 +19,5 @@ func lose_healt(how_much : int):
 		died()
 
 func died():
+	GlobalVar.how_many_to_kill -= 1
 	self.queue_free()
