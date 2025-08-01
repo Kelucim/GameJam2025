@@ -32,7 +32,7 @@ fog_density = 0.0322
 
 [node name="Level1" type="Node" node_paths=PackedStringArray("player_node", "player_ghost_node")]
 script = ExtResource("1_rf6l5")
-number_of_enemies = 1
+number_of_enemies = 6
 player_node = NodePath("Player")
 player_ghost_node = NodePath("PlayerGhost")
 current_level = "res://Levels/level_1.tscn"
@@ -40,9 +40,6 @@ current_level = "res://Levels/level_1.tscn"
 [node name="Player" parent="." instance=ExtResource("2_dilhk")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58862, 2.17532)
-
-[node name="Enemy" parent="." instance=ExtResource("3_3mhv4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.43481, 1.24865, -24.4253)
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.2, 0, 0, 0, 1.5, 0, 0, 0)
@@ -226,3 +223,21 @@ environment = SubResource("Environment_77x7w")
 
 [node name="PlayerGhost" parent="." instance=ExtResource("9_xoyoh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.589, 2.175)
+
+[node name="Enemy" parent="." instance=ExtResource("3_3mhv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0476127, 1.24865, -21.3022)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_3mhv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28912, -9.41821)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_3mhv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44147, 1.28912, 0.0341263)
+
+[node name="Enemy4" parent="." instance=ExtResource("3_3mhv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.80268, 1.28912, -10.3734)
+
+[node name="Enemy5" parent="." instance=ExtResource("3_3mhv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.25006, 1.28912, -17.6819)
+
+[node name="Enemy6" parent="." instance=ExtResource("3_3mhv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.50043, 1.28912, -24.3768)

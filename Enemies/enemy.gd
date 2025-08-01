@@ -18,7 +18,11 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+	
+	
 	if player_ghost_los_check_position and player_los_check_position:
 		%WeaponRaycast.target_position = player_ghost_los_check_position
 		%PlayerWeaponRaycast.target_position = player_los_check_position
