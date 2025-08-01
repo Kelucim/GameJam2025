@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2tcrkoorqc63"]
+
+[ext_resource type="PackedScene" uid="uid://ds4lmuccy0eua" path="res://Levels/LevelAssets/Wall.blend" id="1_ci1se"]
+[ext_resource type="PackedScene" uid="uid://dmqppkpvrwv3m" path="res://Levels/LevelAssets/Wall_Door_Closed.blend" id="2_dtkyu"]
+
+[sub_resource type="Theme" id="Theme_7lkm1"]
+Button/font_sizes/font_size = 72
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 20
+MarginContainer/constants/margin_right = 20
+MarginContainer/constants/margin_top = 20
+
+[sub_resource type="BoxMesh" id="BoxMesh_ohgnh"]
+size = Vector3(5, 1, 5)
+
+[node name="MainMenu" type="Node3D"]
+
+[node name="MMUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_7lkm1")
+
+[node name="MarginContainer" type="MarginContainer" parent="MMUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MMUI/MarginContainer"]
+layout_mode = 2
+dragging_enabled = false
+dragger_visibility = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MMUI/MarginContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Container2" type="Container" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Play"
+
+[node name="Container" type="Container" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="MMUI/MarginContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.13581)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -1)
+mesh = SubResource("BoxMesh_ohgnh")
+
+[node name="Wall2" parent="Camera3D" instance=ExtResource("1_ci1se")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4.109)
+
+[node name="Wall_Door_Closed" parent="." instance=ExtResource("2_dtkyu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.2658, -0.499096, -0.107605)

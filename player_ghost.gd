@@ -11,7 +11,7 @@ func _ready() -> void:
 	speed = default_speed
 	health = max_health
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func follow_player(player_position: Vector3):
