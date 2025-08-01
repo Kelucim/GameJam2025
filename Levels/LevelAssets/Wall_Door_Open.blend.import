@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://v6u1x77kbmew"
-path="res://.godot/imported/Wall_Exit.blend-55d37f7496a74550eef3f2ee76bdb7bb.scn"
+uid="uid://dgj4nvah24ph0"
+path="res://.godot/imported/Wall_Door_Open.blend-8a70ff8397e9fe9b080e3a46e96cf276.scn"
 
 [deps]
 
-source_file="res://Levels/Wall_Exit.blend"
-dest_files=["res://.godot/imported/Wall_Exit.blend-55d37f7496a74550eef3f2ee76bdb7bb.scn"]
+source_file="res://Levels/LevelAssets/Wall_Door_Open.blend"
+dest_files=["res://.godot/imported/Wall_Door_Open.blend-8a70ff8397e9fe9b080e3a46e96cf276.scn"]
 
 [params]
 
@@ -34,11 +34,15 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "nodes": {
-"PATH:Wall_exit": {
-"generate/physics": true
+"PATH:Wall_door_open": {
+"generate/physics": true,
+"physics/layer": 2,
+"physics/mask": 2
 },
-"PATH:Wall_exit/Door_exit": {
-"generate/physics": true
+"PATH:Wall_door_open/Door_open": {
+"generate/physics": true,
+"physics/layer": 2,
+"physics/mask": 2
 }
 }
 }

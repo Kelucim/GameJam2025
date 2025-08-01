@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://duhvsmyadbhiv"
-path="res://.godot/imported/Walls.blend-24327ea5715a61012eaeb93a009f9861.scn"
+uid="uid://ds4lmuccy0eua"
+path="res://.godot/imported/Wall.blend-4114732558a0924a0fd3e5720cd7fc54.scn"
 
 [deps]
 
-source_file="res://Levels/Walls.blend"
-dest_files=["res://.godot/imported/Walls.blend-24327ea5715a61012eaeb93a009f9861.scn"]
+source_file="res://Levels/LevelAssets/Wall.blend"
+dest_files=["res://.godot/imported/Wall.blend-4114732558a0924a0fd3e5720cd7fc54.scn"]
 
 [params]
 
@@ -32,7 +32,15 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Wall": {
+"generate/physics": true,
+"physics/layer": 2,
+"physics/mask": 2
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://it1xaooa30r5"]
 
 [ext_resource type="Script" uid="uid://0lv0v2v4wspi" path="res://Levels/LevelAssets/exit_door.gd" id="1_x6kpj"]
-[ext_resource type="PackedScene" uid="uid://v6u1x77kbmew" path="res://Levels/Wall_Exit.blend" id="2_ihns8"]
+[ext_resource type="PackedScene" uid="uid://v6u1x77kbmew" path="res://Levels/LevelAssets/Wall_Exit.blend" id="2_ihns8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_htbm0"]
 size = Vector3(0.5, 2.2, 1)

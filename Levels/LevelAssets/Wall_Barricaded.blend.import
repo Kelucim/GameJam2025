@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://huy4yp1tilkb"
-path="res://.godot/imported/Wall_Barricaded.blend-47d3865e003847cc8dc09ccb8158a552.scn"
+path="res://.godot/imported/Wall_Barricaded.blend-c76b5cb0b0dcd9940391092cd53b2b40.scn"
 
 [deps]
 
-source_file="res://Levels/Wall_Barricaded.blend"
-dest_files=["res://.godot/imported/Wall_Barricaded.blend-47d3865e003847cc8dc09ccb8158a552.scn"]
+source_file="res://Levels/LevelAssets/Wall_Barricaded.blend"
+dest_files=["res://.godot/imported/Wall_Barricaded.blend-c76b5cb0b0dcd9940391092cd53b2b40.scn"]
 
 [params]
 
@@ -35,7 +35,9 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:Wall_door_barricaded": {
-"generate/physics": true
+"generate/physics": true,
+"physics/layer": 2,
+"physics/mask": 2
 }
 }
 }

@@ -1,5 +1,5 @@
 extends CharacterBody3D
-
+class_name player
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 100
@@ -26,12 +26,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
-	#if Input.is_action_just_pressed("dash") and can_dash:
-		#can_dash = false
-		#%DashTimer.start()
-		#velocity.x = direction.x * JUMP_VELOCITY
-		#velocity.z = direction.z * JUMP_VELOCITY
-		
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
