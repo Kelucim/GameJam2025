@@ -1,27 +1,28 @@
 [gd_scene load_steps=6 format=3 uid="uid://it1xaooa30r5"]
 
 [ext_resource type="Script" uid="uid://0lv0v2v4wspi" path="res://Levels/LevelAssets/exit_door.gd" id="1_x6kpj"]
-[ext_resource type="PackedScene" uid="uid://v6u1x77kbmew" path="res://Levels/LevelAssets/Wall_Exit.blend" id="2_ihns8"]
+[ext_resource type="PackedScene" uid="uid://bkriojcv5u8bi" path="res://Levels/LevelAssets/wall_exit.tscn" id="2_yc4db"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_htbm0"]
-size = Vector3(0.5, 2.2, 1)
+size = Vector3(0.5, 2.2, 2)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yc4db"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ihns8"]
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
 emission_enabled = true
-emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 5.0
-backlight = Color(1, 1, 1, 1)
+emission_energy_multiplier = 16.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_x6kpj"]
-material = SubResource("StandardMaterial3D_yc4db")
-size = Vector3(0.5, 2.2, 1)
+material = SubResource("StandardMaterial3D_ihns8")
+flip_faces = true
+size = Vector3(2.5, 2.5, 2.5)
 
 [node name="ExitDoor" type="Node3D"]
 script = ExtResource("1_x6kpj")
 
 [node name="LoadArea" type="Area3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26441, 1, 0)
 collision_layer = 3
 monitorable = false
 
@@ -29,10 +30,10 @@ monitorable = false
 shape = SubResource("BoxShape3D_htbm0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.19183, 0.29241, 1.0739, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.19183, 1.34831, 1.15548, 0)
 mesh = SubResource("BoxMesh_x6kpj")
 
-[node name="Wall_Exit" parent="." instance=ExtResource("2_ihns8")]
+[node name="WallExit" parent="." instance=ExtResource("2_yc4db")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bee37yfm0h2vl"]
+[gd_scene load_steps=15 format=3 uid="uid://bee37yfm0h2vl"]
 
 [ext_resource type="Script" uid="uid://dq7pxm17rth7q" path="res://Levels/level.gd" id="1_rf6l5"]
 [ext_resource type="PackedScene" uid="uid://dsiesba77e41y" path="res://player.tscn" id="2_dilhk"]
@@ -16,8 +16,18 @@ size = Vector3(8, 1, 20)
 [sub_resource type="BoxMesh" id="BoxMesh_f4pg2"]
 size = Vector3(8, 1, 25)
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xoyoh"]
+sky_top_color = Color(0.172277, 0.330019, 0.664613, 1)
+sky_horizon_color = Color(0.890608, 0.821014, 0.653749, 1)
+
+[sub_resource type="Sky" id="Sky_xoyoh"]
+sky_material = SubResource("ProceduralSkyMaterial_xoyoh")
+
 [sub_resource type="Environment" id="Environment_77x7w"]
-ambient_light_color = Color(0.717647, 0.843137, 0.894118, 1)
+background_mode = 2
+sky = SubResource("Sky_xoyoh")
+ambient_light_source = 2
+ambient_light_color = Color(0.219501, 0.219501, 0.219501, 1)
 fog_density = 0.0322
 
 [node name="Level1" type="Node" node_paths=PackedStringArray("player_node", "player_ghost_node")]
@@ -32,7 +42,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58862, 2.17532)
 
 [node name="Enemy" parent="." instance=ExtResource("3_3mhv4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24865, -9.47314)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.43481, 1.24865, -24.4253)
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.2, 0, 0, 0, 1.5, 0, 0, 0)
@@ -215,3 +225,4 @@ shadow_enabled = true
 environment = SubResource("Environment_77x7w")
 
 [node name="PlayerGhost" parent="." instance=ExtResource("9_xoyoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.589, 2.175)

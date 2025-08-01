@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkriojcv5u8bi"]
+
+[ext_resource type="PackedScene" uid="uid://v6u1x77kbmew" path="res://Levels/LevelAssets/Wall_Exit.blend" id="1_3xp7m"]
+[ext_resource type="Script" uid="uid://ko3mjr8dax4x" path="res://Levels/LevelAssets/wall_exit.gd" id="2_g0j6s"]
+
+[node name="WallExit" instance=ExtResource("1_3xp7m")]
+script = ExtResource("2_g0j6s")

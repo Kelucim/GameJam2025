@@ -10,7 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if GlobalVar.how_many_to_kill == 0 and %LoadArea.monitoring != true:
-		print_debug("exit opened")
+		$WallExit._play_open_door()
 		%LoadArea.monitoring = true
 
 

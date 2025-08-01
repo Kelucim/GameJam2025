@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2tcrkoorqc63"]
+[gd_scene load_steps=8 format=3 uid="uid://d2tcrkoorqc63"]
 
 [ext_resource type="PackedScene" uid="uid://ds4lmuccy0eua" path="res://Levels/LevelAssets/Wall.blend" id="1_ci1se"]
+[ext_resource type="Script" uid="uid://br0ixfudn8q8a" path="res://Menu/main_menu.gd" id="1_dtkyu"]
 [ext_resource type="PackedScene" uid="uid://dmqppkpvrwv3m" path="res://Levels/LevelAssets/Wall_Door_Closed.blend" id="2_dtkyu"]
 
 [sub_resource type="Theme" id="Theme_7lkm1"]
@@ -13,7 +14,15 @@ MarginContainer/constants/margin_top = 20
 [sub_resource type="BoxMesh" id="BoxMesh_ohgnh"]
 size = Vector3(5, 1, 5)
 
+[sub_resource type="BoxMesh" id="BoxMesh_ci1se"]
+size = Vector3(5, 5, 0.5)
+
+[sub_resource type="Environment" id="Environment_ci1se"]
+fog_enabled = true
+fog_density = 0.0729
+
 [node name="MainMenu" type="Node3D"]
+script = ExtResource("1_dtkyu")
 
 [node name="MMUI" type="Control" parent="."]
 layout_mode = 3
@@ -60,14 +69,47 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.13581)
+transform = Transform3D(1, 0, 0, 0, 0.96806, 0.250718, 0, -0.250718, 0.96806, 0, 1.12741, 2.13581)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -1)
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 1.13581)
 mesh = SubResource("BoxMesh_ohgnh")
+skeleton = NodePath("../../Camera3D")
 
-[node name="Wall2" parent="Camera3D" instance=ExtResource("1_ci1se")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4.109)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.44293, 1.13581)
+mesh = SubResource("BoxMesh_ohgnh")
+skeleton = NodePath("../../Camera3D")
 
-[node name="Wall_Door_Closed" parent="." instance=ExtResource("2_dtkyu")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.2658, -0.499096, -0.107605)
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24549, 3.33784)
+mesh = SubResource("BoxMesh_ci1se")
+skeleton = NodePath("../../Camera3D")
+
+[node name="Wall_Door_Closed" parent="Node3D" instance=ExtResource("2_dtkyu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, -0.5, -0.108)
+
+[node name="Wall2" parent="Node3D" instance=ExtResource("1_ci1se")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.589485, -0.5, -1.189)
+
+[node name="Wall3" parent="Node3D" instance=ExtResource("1_ci1se")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22375, -0.5, -1.189)
+
+[node name="Wall4" parent="Node3D" instance=ExtResource("1_ci1se")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.31671, -0.5, -0.164668)
+
+[node name="Wall5" parent="Node3D" instance=ExtResource("1_ci1se")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.31671, -0.5, 2.24307)
+
+[node name="Wall6" parent="Node3D" instance=ExtResource("1_ci1se")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, -0.5, 2.384)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76308, 1.17086)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ci1se")
+
+[connection signal="pressed" from="MMUI/MarginContainer/HSplitContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

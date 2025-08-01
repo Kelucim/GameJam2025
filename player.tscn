@@ -4,8 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://bwpmbvt3os8oh" path="res://Guns/pistol.tscn" id="2_onrkg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
+radius = 0.4
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
+radius = 0.4
 
 [node name="Player" type="CharacterBody3D"]
 process_mode = 1

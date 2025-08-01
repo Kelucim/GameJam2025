@@ -11,6 +11,6 @@ func _ready() -> void:
 	GlobalVar.how_many_to_kill = number_of_enemies
 	
 func _process(_delta: float) -> void:
-	if player_ghost_node:
+	if player_ghost_node and player_node:
 		player_ghost_node.follow_player(player_node.global_position)
-	get_tree().call_group("enemies", "target_position", player_node.global_position, player_ghost_node.global_position)
+		get_tree().call_group("enemies", "target_position", player_node.global_position, player_ghost_node.global_position)
