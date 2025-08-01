@@ -3,13 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ds4lmuccy0eua" path="res://Levels/LevelAssets/Wall.blend" id="1_ci1se"]
 [ext_resource type="Script" uid="uid://br0ixfudn8q8a" path="res://Menu/main_menu.gd" id="1_dtkyu"]
 [ext_resource type="PackedScene" uid="uid://dmqppkpvrwv3m" path="res://Levels/LevelAssets/Wall_Door_Closed.blend" id="2_dtkyu"]
-
-[sub_resource type="Theme" id="Theme_7lkm1"]
-Button/font_sizes/font_size = 72
-MarginContainer/constants/margin_bottom = 20
-MarginContainer/constants/margin_left = 20
-MarginContainer/constants/margin_right = 20
-MarginContainer/constants/margin_top = 20
+[ext_resource type="Theme" uid="uid://8kbukp78eoe6" path="res://Menu/main_menu.tres" id="2_ohgnh"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ohgnh"]
 size = Vector3(5, 1, 5)
@@ -18,7 +12,6 @@ size = Vector3(5, 1, 5)
 size = Vector3(5, 5, 0.5)
 
 [sub_resource type="Environment" id="Environment_ci1se"]
-fog_enabled = true
 fog_density = 0.0729
 
 [node name="MainMenu" type="Node3D"]
@@ -31,7 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_7lkm1")
+theme = ExtResource("2_ohgnh")
 
 [node name="MarginContainer" type="MarginContainer" parent="MMUI"]
 layout_mode = 1
@@ -50,7 +43,7 @@ dragger_visibility = 1
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Container2" type="Container" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer"]
+[node name="Control2" type="Control" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -60,7 +53,26 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Play"
 
-[node name="Container" type="Container" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "Volume:"
+
+[node name="HSlider" type="HSlider" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+value = 100.0
+
+[node name="Control" type="Control" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -108,8 +120,11 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, -0.
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76308, 1.17086)
+shadow_enabled = true
+omni_range = 3.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ci1se")
 
 [connection signal="pressed" from="MMUI/MarginContainer/HSplitContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="value_changed" from="MMUI/MarginContainer/HSplitContainer/VBoxContainer/MarginContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]

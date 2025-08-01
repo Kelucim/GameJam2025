@@ -5,6 +5,8 @@ extends Node3D
 @export var reload_speed : int = 2
 @export var damage : int = 25
 
+@onready var ammo_label = $Control/MarginContainer/AmmoLabel
+
 var ammo : int
 var reloading : bool = false
 
@@ -12,7 +14,8 @@ var reloading : bool = false
 func _ready() -> void:
 	ammo = max_ammo
 	%ReloadTimer.wait_time = reload_speed
-
+	update_ammo_count()
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if (ammo == 0 or Input.is_action_just_pressed("reload")) and !reloading:
@@ -36,11 +39,14 @@ func shoot():
 			var target : hit_box= %RayCast.get_collider()
 			target.got_hit(damage)
 	print_debug("shoot")
-	print_debug(ammo)
+	update_ammo_count()
 
 
 func _on_reload_timer_timeout() -> void:
 	reloading = false
 	ammo = max_ammo
 	print_debug("reloaded")
-	print_debug(ammo)
+	update_ammo_count()
+
+func update_ammo_count():
+	ammo_label.text = str(ammo,"/",max_ammo)
