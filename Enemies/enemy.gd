@@ -4,6 +4,8 @@ class_name enemy
 @export var max_health : int = 100
 @export var damage : int = 20
 
+@onready var SFX = $AttackSFX
+
 var health : int = 1
 var player_los_check_position
 var player_ghost_los_check_position
@@ -57,5 +59,6 @@ func is_still_colliding():
 	if %WeaponRaycast.is_colliding() && %PlayerWeaponRaycast.is_colliding():
 		if %WeaponRaycast.get_collider() is player_ghost and %PlayerWeaponRaycast.get_collider() is player:
 			player_hitbox.player_lost_health(damage)
+			SFX.play()
 		else:
 			print_debug("nah")

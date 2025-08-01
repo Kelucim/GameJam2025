@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2tcrkoorqc63"]
+[gd_scene load_steps=9 format=3 uid="uid://d2tcrkoorqc63"]
 
 [ext_resource type="PackedScene" uid="uid://ds4lmuccy0eua" path="res://Levels/LevelAssets/Wall.blend" id="1_ci1se"]
 [ext_resource type="Script" uid="uid://br0ixfudn8q8a" path="res://Menu/main_menu.gd" id="1_dtkyu"]
 [ext_resource type="PackedScene" uid="uid://dmqppkpvrwv3m" path="res://Levels/LevelAssets/Wall_Door_Closed.blend" id="2_dtkyu"]
 [ext_resource type="Theme" uid="uid://8kbukp78eoe6" path="res://Menu/main_menu.tres" id="2_ohgnh"]
+[ext_resource type="AudioStream" uid="uid://cyw2aala1d3lq" path="res://Menu/game-background-sound-342336.mp3" id="5_fw3rq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ohgnh"]
 size = Vector3(5, 1, 5)
@@ -70,7 +71,9 @@ text = "Volume:"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-value = 100.0
+min_value = -80.0
+max_value = 0.0
+value = -20.0
 
 [node name="Control" type="Control" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer"]
 layout_mode = 2
@@ -125,6 +128,10 @@ omni_range = 3.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ci1se")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_fw3rq")
+autoplay = true
 
 [connection signal="pressed" from="MMUI/MarginContainer/HSplitContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="value_changed" from="MMUI/MarginContainer/HSplitContainer/VBoxContainer/MarginContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]

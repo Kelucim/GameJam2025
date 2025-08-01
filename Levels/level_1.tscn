@@ -1,17 +1,17 @@
 [gd_scene load_steps=15 format=3 uid="uid://bee37yfm0h2vl"]
 
 [ext_resource type="Script" uid="uid://dq7pxm17rth7q" path="res://Levels/level.gd" id="1_rf6l5"]
-[ext_resource type="PackedScene" uid="uid://dsiesba77e41y" path="res://player.tscn" id="2_dilhk"]
+[ext_resource type="PackedScene" uid="uid://dsiesba77e41y" path="res://Player/player.tscn" id="2_dilhk"]
 [ext_resource type="PackedScene" uid="uid://dbfwgliq2746w" path="res://Enemies/enemy.tscn" id="3_3mhv4"]
 [ext_resource type="PackedScene" uid="uid://it1xaooa30r5" path="res://Levels/LevelAssets/exit_door.tscn" id="5_syshm"]
 [ext_resource type="PackedScene" uid="uid://ds4lmuccy0eua" path="res://Levels/LevelAssets/Wall.blend" id="6_xoyoh"]
 [ext_resource type="PackedScene" uid="uid://dgj4nvah24ph0" path="res://Levels/LevelAssets/Wall_Door_Open.blend" id="7_f4pg2"]
 [ext_resource type="PackedScene" uid="uid://huy4yp1tilkb" path="res://Levels/LevelAssets/Wall_Barricaded.blend" id="8_62b6n"]
 [ext_resource type="PackedScene" uid="uid://dmqppkpvrwv3m" path="res://Levels/LevelAssets/Wall_Door_Closed.blend" id="9_rs4xw"]
-[ext_resource type="PackedScene" uid="uid://tnoe6hb5cag5" path="res://player_ghost.tscn" id="9_xoyoh"]
+[ext_resource type="PackedScene" uid="uid://tnoe6hb5cag5" path="res://Player/player_ghost.tscn" id="9_xoyoh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xoyoh"]
-size = Vector3(8, 1, 20)
+size = Vector3(8, 1, 25)
 
 [sub_resource type="BoxMesh" id="BoxMesh_f4pg2"]
 size = Vector3(8, 1, 25)

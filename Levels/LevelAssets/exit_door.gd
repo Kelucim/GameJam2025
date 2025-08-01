@@ -2,6 +2,8 @@ extends Node3D
 
 @export var next_scene : String
 
+@onready var door_opening_audio = $AudioStreamPlayer3D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	%LoadArea.monitoring = false
@@ -10,6 +12,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if GlobalVar.how_many_to_kill == 0 and %LoadArea.monitoring != true:
+		door_opening_audio.play()
 		$WallExit._play_open_door()
 		%LoadArea.monitoring = true
 

@@ -2,8 +2,11 @@ extends Node3D
 
 @export var max_ammo : int = 10
 @export var is_automatic : bool = false
-@export var reload_speed : int = 2
+@export var reload_speed : float = 2
 @export var damage : int = 25
+
+@onready var gunshoot_audio = $GunShotAudioStream
+@onready var reload_audio = $ReloadAudioStream
 
 @onready var ammo_label = $Control/MarginContainer/AmmoLabel
 
@@ -20,6 +23,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if (ammo == 0 or Input.is_action_just_pressed("reload")) and !reloading:
 		reloading = true
+		reload_audio.play()
 		%ReloadTimer.start()
 		print_debug("reloading")
 	
@@ -33,6 +37,7 @@ func _process(_delta: float) -> void:
 
 
 func shoot():
+	gunshoot_audio.play()
 	ammo = ammo-1
 	if %RayCast.is_colliding():
 		if %RayCast.get_collider() is hit_box:

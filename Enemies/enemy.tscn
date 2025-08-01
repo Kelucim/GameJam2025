@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dbfwgliq2746w"]
+[gd_scene load_steps=11 format=3 uid="uid://dbfwgliq2746w"]
 
 [ext_resource type="Script" uid="uid://c32jk74x3yyu6" path="res://Enemies/enemy.gd" id="1_bxkaj"]
 [ext_resource type="PackedScene" uid="uid://dov2nsy6wbhgj" path="res://Enemies/hit_box.tscn" id="2_bxkaj"]
+[ext_resource type="AudioStream" uid="uid://d4m713kfq7qao" path="res://Guns/Audio/single-pistol-gunshot-42-40781.mp3" id="3_47qgu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_47qgu"]
 height = 1.5
@@ -53,7 +54,7 @@ shape = SubResource("CapsuleShape3D_bxkaj")
 
 [node name="AttackTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 1.5
+wait_time = 0.5
 one_shot = true
 
 [node name="WeaponRaycast" type="RayCast3D" parent="."]
@@ -63,5 +64,8 @@ collision_mask = 18
 [node name="PlayerWeaponRaycast" type="RayCast3D" parent="."]
 unique_name_in_owner = true
 collision_mask = 3
+
+[node name="AttackSFX" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_47qgu")
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

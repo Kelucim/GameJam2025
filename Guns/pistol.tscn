@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwpmbvt3os8oh"]
+[gd_scene load_steps=6 format=3 uid="uid://bwpmbvt3os8oh"]
 
 [ext_resource type="Script" uid="uid://cr4kpmuxspurl" path="res://Guns/gun.gd" id="1_gxrfj"]
 [ext_resource type="Theme" uid="uid://8kbukp78eoe6" path="res://Menu/main_menu.tres" id="2_8se6f"]
+[ext_resource type="AudioStream" uid="uid://d4m713kfq7qao" path="res://Guns/Audio/single-pistol-gunshot-42-40781.mp3" id="3_gcii7"]
+[ext_resource type="AudioStream" uid="uid://c6d4i4lke7210" path="res://Guns/Audio/mag-reload-81594.mp3" id="4_2hk77"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_soq8o"]
 radius = 0.1
@@ -64,5 +66,11 @@ unique_name_in_owner = true
 target_position = Vector3(0, 0, -20)
 collision_mask = 10
 collide_with_areas = true
+
+[node name="GunShotAudioStream" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_gcii7")
+
+[node name="ReloadAudioStream" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_2hk77")
 
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
