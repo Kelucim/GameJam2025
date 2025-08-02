@@ -9,12 +9,13 @@ class_name enemy
 var health : int = 1
 var player_los_check_position
 var player_ghost_los_check_position
-var player_hitbox : player_ghost
+var player_hitbox : player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	health = max_health
-
+	%WeaponRaycast.transform = $GunBarrel.transform
+	%PlayerWeaponRaycast.transform = $GunBarrel.transform
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -31,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	
 	if %WeaponRaycast.is_colliding() && %PlayerWeaponRaycast.is_colliding():
 		if (%WeaponRaycast.get_collider() is player_ghost and %PlayerWeaponRaycast.get_collider() is player) and %AttackTimer.is_stopped():
-			player_hitbox = %WeaponRaycast.get_collider()
+			player_hitbox = %PlayerWeaponRaycast.get_collider()
 			print_debug("see you")
 			%AttackTimer.start()
 		
@@ -49,7 +50,8 @@ func target_position(target, player_ghost_position):
 	look_at(Vector3(target.x, position.y, target.z))
 	player_ghost_los_check_position = to_local(player_ghost_position)
 	player_los_check_position = to_local(target)
-
+	player_los_check_position = Vector3(player_los_check_position.x, player_los_check_position.y - 1.2, player_los_check_position.z)
+	player_ghost_los_check_position = Vector3(player_ghost_los_check_position.x, player_ghost_los_check_position.y - 1.2, player_ghost_los_check_position.z)
 
 func _on_attack_timer_timeout() -> void:
 	print_debug("Are ja dead")
@@ -57,8 +59,9 @@ func _on_attack_timer_timeout() -> void:
 
 func is_still_colliding():
 	if %WeaponRaycast.is_colliding() && %PlayerWeaponRaycast.is_colliding():
+		SFX.play()
+		
 		if %WeaponRaycast.get_collider() is player_ghost and %PlayerWeaponRaycast.get_collider() is player:
 			player_hitbox.player_lost_health(damage)
-			SFX.play()
 		else:
-			print_debug("nah")
+			player_hitbox.dodged_a_bullete()

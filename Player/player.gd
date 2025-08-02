@@ -3,14 +3,18 @@ class_name player
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 100
+const MAX_HEALTH = 100
 
 var mouse_sensitivity = 0.5
 var can_dash := true
 var rotation_x := 0.0
 var rotation_y := 0.0
+var health = 1
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	health = MAX_HEALTH
+
 	
 func _physics_process(delta: float) -> void:
 
@@ -47,3 +51,14 @@ func _input(event: InputEvent) -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+func player_lost_health(damage_taken):
+	health -= damage_taken
+	print_debug("got hit")
+	$HitAudio.play()
+	if health <= 0:
+		GlobalVar.player_died()
+	
+
+func dodged_a_bullete():
+	$BulletMissAudio.play()

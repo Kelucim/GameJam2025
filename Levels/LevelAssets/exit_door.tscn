@@ -44,5 +44,6 @@ light_color = Color(0.188235, 0.956863, 0.521569, 1)
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0965, 0)
 stream = ExtResource("3_yc4db")
+unit_size = 2.0
 
 [connection signal="body_entered" from="LoadArea" to="." method="_on_load_area_body_entered"]

@@ -54,7 +54,6 @@ shape = SubResource("CapsuleShape3D_bxkaj")
 
 [node name="AttackTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 0.5
 one_shot = true
 
 [node name="WeaponRaycast" type="RayCast3D" parent="."]
@@ -67,5 +66,8 @@ collision_mask = 3
 
 [node name="AttackSFX" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_47qgu")
+
+[node name="GunBarrel" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

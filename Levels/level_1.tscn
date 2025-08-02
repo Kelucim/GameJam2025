@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bee37yfm0h2vl"]
+[gd_scene load_steps=16 format=3 uid="uid://bee37yfm0h2vl"]
 
 [ext_resource type="Script" uid="uid://dq7pxm17rth7q" path="res://Levels/level.gd" id="1_rf6l5"]
 [ext_resource type="PackedScene" uid="uid://dsiesba77e41y" path="res://Player/player.tscn" id="2_dilhk"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://huy4yp1tilkb" path="res://Levels/LevelAssets/Wall_Barricaded.blend" id="8_62b6n"]
 [ext_resource type="PackedScene" uid="uid://dmqppkpvrwv3m" path="res://Levels/LevelAssets/Wall_Door_Closed.blend" id="9_rs4xw"]
 [ext_resource type="PackedScene" uid="uid://tnoe6hb5cag5" path="res://Player/player_ghost.tscn" id="9_xoyoh"]
+[ext_resource type="AudioStream" uid="uid://bymxihjfckae2" path="res://Levels/LevelAssets/Audio/bass-guitar-death-metal-loop-240-bpm-101327.mp3" id="10_f4pg2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xoyoh"]
 size = Vector3(8, 1, 25)
@@ -238,3 +239,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.80268, 1.28912, -10.3734)
 
 [node name="Enemy5" parent="." instance=ExtResource("3_3mhv4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.25006, 1.28912, -17.6819)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_f4pg2")
+volume_db = -10.0
+autoplay = true
