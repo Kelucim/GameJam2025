@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cr4kpmuxspurl" path="res://Guns/gun.gd" id="1_jcdfn"]
 [ext_resource type="Theme" uid="uid://8kbukp78eoe6" path="res://Menu/main_menu.tres" id="2_axm6k"]
-[ext_resource type="AudioStream" uid="uid://665o3c0yxpmb" path="res://Guns/Audio/single-gunshot-42-80288.mp3" id="3_jcdfn"]
+[ext_resource type="AudioStream" uid="uid://665o3c0yxpmb" path="res://Guns/Audio/SniperGunshot.mp3" id="3_jcdfn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcdfn"]
 albedo_color = Color(0.129412, 0.262745, 0.129412, 1)

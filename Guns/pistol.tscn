@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwpmbvt3os8oh"]
+[gd_scene load_steps=5 format=3 uid="uid://bwpmbvt3os8oh"]
 
 [ext_resource type="Script" uid="uid://cr4kpmuxspurl" path="res://Guns/gun.gd" id="1_gxrfj"]
-[ext_resource type="Theme" uid="uid://8kbukp78eoe6" path="res://Menu/main_menu.tres" id="2_8se6f"]
-[ext_resource type="AudioStream" uid="uid://d4m713kfq7qao" path="res://Guns/Audio/single-pistol-gunshot-42-40781.mp3" id="3_gcii7"]
-[ext_resource type="AudioStream" uid="uid://c6d4i4lke7210" path="res://Guns/Audio/mag-reload-81594.mp3" id="4_2hk77"]
+[ext_resource type="AudioStream" uid="uid://d4m713kfq7qao" path="res://Guns/Audio/PistoGunshot.mp3" id="3_gcii7"]
+[ext_resource type="AudioStream" uid="uid://c6d4i4lke7210" path="res://Guns/Audio/Reload.mp3" id="4_2hk77"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_soq8o"]
 radius = 0.1
@@ -11,43 +10,6 @@ height = 1.0
 
 [node name="Pistol" type="Node3D"]
 script = ExtResource("1_gxrfj")
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("2_8se6f")
-
-[node name="CenterContainer" type="CenterContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Control/CenterContainer"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="AmmoLabel" type="Label" parent="Control/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-text = "10/10"
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(0.999743, 0, 0.0226873, 0, 1, 0, -0.0226873, 0, 0.999743, 0.226, -0.269, -0.464)

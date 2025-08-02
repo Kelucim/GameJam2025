@@ -8,8 +8,6 @@ extends Node3D
 @onready var gunshoot_audio = $GunShotAudioStream
 @onready var reload_audio = $ReloadAudioStream
 
-@onready var ammo_label = $Control/MarginContainer/AmmoLabel
-
 var ammo : int
 var reloading : bool = false
 
@@ -54,4 +52,4 @@ func _on_reload_timer_timeout() -> void:
 	update_ammo_count()
 
 func update_ammo_count():
-	ammo_label.text = str(ammo,"/",max_ammo)
+	get_tree().call_group("game_ui","change_ammo", ammo, max_ammo)

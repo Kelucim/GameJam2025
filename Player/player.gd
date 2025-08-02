@@ -3,7 +3,7 @@ class_name player
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 100
-const MAX_HEALTH = 100
+const MAX_HEALTH = 10
 
 var mouse_sensitivity = 0.5
 var can_dash := true
@@ -49,16 +49,19 @@ func _input(event: InputEvent) -> void:
 	%PlayerCamera.rotation.x = rotation_x
 	
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("pause"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
+	pass
+	
 func player_lost_health(damage_taken):
 	health -= damage_taken
 	print_debug("got hit")
 	$HitAudio.play()
+	get_tree().call_group("game_ui","change_health", health)
 	if health <= 0:
 		GlobalVar.player_died()
 	
 
 func dodged_a_bullete():
 	$BulletMissAudio.play()
+	
+func change_sensitivity(new_sensitivity):
+	mouse_sensitivity = new_sensitivity / 10

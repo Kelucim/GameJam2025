@@ -31,7 +31,7 @@ monitorable = false
 shape = SubResource("BoxShape3D_htbm0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.19183, 1.34831, 1.15548, 0)
+transform = Transform3D(1, 0, 0, 0, 0.883334, 0, 0, 0, 1.19183, 1.34831, 1.15548, 0)
 mesh = SubResource("BoxMesh_x6kpj")
 
 [node name="WallExit" parent="." instance=ExtResource("2_yc4db")]
@@ -42,8 +42,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.283497, 2.34836, 0)
 light_color = Color(0.188235, 0.956863, 0.521569, 1)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0965, 0)
 stream = ExtResource("3_yc4db")
-unit_size = 2.0
+unit_size = 5.0
 
 [connection signal="body_entered" from="LoadArea" to="." method="_on_load_area_body_entered"]

@@ -2,7 +2,7 @@ extends CharacterBody3D
 class_name enemy
 
 @export var max_health : int = 100
-@export var damage : int = 20
+@export var damage : int = 2
 
 @onready var SFX = $AttackSFX
 
@@ -39,6 +39,7 @@ func _physics_process(delta: float) -> void:
 
 func lose_healt(how_much : int):
 	health -= how_much
+	$GotHitSFX.play()
 	if health <= 0:
 		died()
 

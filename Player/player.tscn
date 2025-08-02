@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://crjw5k33bbyd7" path="res://Player/player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://bwpmbvt3os8oh" path="res://Guns/pistol.tscn" id="2_onrkg"]
-[ext_resource type="AudioStream" uid="uid://bxpk87d0257wj" path="res://Player/footsteps-stairs-fast-90220.mp3" id="3_btcbx"]
-[ext_resource type="AudioStream" uid="uid://bkcvj37io8aqk" path="res://Player/086819_hurt-2-82784.mp3" id="4_gwnis"]
-[ext_resource type="AudioStream" uid="uid://ceysvqpgpd2g5" path="res://Enemies/bullet-382829.mp3" id="5_k53q1"]
+[ext_resource type="AudioStream" uid="uid://bxpk87d0257wj" path="res://Player/FootSteps.mp3" id="3_btcbx"]
+[ext_resource type="AudioStream" uid="uid://bkcvj37io8aqk" path="res://Player/PlayerHurt.mp3" id="4_gwnis"]
+[ext_resource type="AudioStream" uid="uid://1sbstn0uedte" path="res://Enemies/BulletMiss.mp3" id="5_k53q1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 radius = 0.4
@@ -12,7 +12,7 @@ radius = 0.4
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 radius = 0.4
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player_group"]]
 process_mode = 1
 collision_mask = 7
 script = ExtResource("1_4flbx")
@@ -40,4 +40,3 @@ max_db = 6.0
 
 [node name="BulletMissAudio" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_k53q1")
-volume_db = -10.0
