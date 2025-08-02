@@ -36,7 +36,8 @@ func _physics_process(delta: float) -> void:
 			player_hitbox = %PlayerWeaponRaycast.get_collider()
 			print_debug("see you")
 			%AttackTimer.start()
-		
+	
+	move_and_slide()
 
 func lose_healt(how_much : int):
 	health -= how_much

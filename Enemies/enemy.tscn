@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dbfwgliq2746w"]
+[gd_scene load_steps=9 format=3 uid="uid://dbfwgliq2746w"]
 
 [ext_resource type="Script" uid="uid://c32jk74x3yyu6" path="res://Enemies/enemy.gd" id="1_bxkaj"]
 [ext_resource type="PackedScene" uid="uid://dov2nsy6wbhgj" path="res://Enemies/hit_box.tscn" id="2_bxkaj"]
@@ -10,20 +10,8 @@
 height = 1.5
 radius = 0.392578
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_572h1"]
-height = 1.5
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_rt1x0"]
 radius = 0.279082
-
-[sub_resource type="SphereMesh" id="SphereMesh_8wvsg"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bxkaj"]
-albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_47qgu"]
-material = SubResource("StandardMaterial3D_bxkaj")
-height = 0.2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bxkaj"]
 
@@ -37,29 +25,18 @@ Animations = NodePath("Soldier_standing")
 got_hit_sfx = NodePath("GotHitSFX")
 
 [node name="HitBox" parent="." instance=ExtResource("2_bxkaj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.276023, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
 shape = SubResource("CylinderShape3D_rt1x0")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="HitBox"]
-visible = false
-mesh = SubResource("CapsuleMesh_572h1")
-
 [node name="HitBox2" parent="." instance=ExtResource("2_bxkaj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16642, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44244, 0)
 is_crit = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0456276, -0.171528, -0.104852)
 shape = SubResource("SphereShape3D_rt1x0")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="HitBox2"]
-visible = false
-mesh = SubResource("SphereMesh_8wvsg")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="HitBox2/MeshInstance3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
-mesh = SubResource("CylinderMesh_47qgu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -89,6 +66,6 @@ stream = ExtResource("4_572h1")
 unit_size = 5.0
 
 [node name="Soldier_standing" parent="." instance=ExtResource("5_rt1x0")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.72774, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.451717, 0)
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

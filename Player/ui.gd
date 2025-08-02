@@ -42,6 +42,7 @@ func change_health(new_health):
 
 
 func _on_h_slider_value_changed(value: float) -> void:
+	GlobalVar.mouse_sensitivity = value
 	get_tree().call_group("player_group", "change_sensitivity", value)
 
 func change_ammo(new_ammo, max_ammo):

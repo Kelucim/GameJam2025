@@ -15,6 +15,7 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	health = MAX_HEALTH
 	get_tree().call_group("game_ui","change_health", health)
+	mouse_sensitivity = GlobalVar.mouse_sensitivity
 
 	
 func _physics_process(delta: float) -> void:
