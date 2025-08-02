@@ -46,6 +46,11 @@ func _on_h_slider_value_changed(value: float) -> void:
 
 func change_ammo(new_ammo, max_ammo):
 	%AmmoLabel.text = str(new_ammo,"/",max_ammo)
+	
+	if new_ammo > 3:
+		%AmmoLabel.add_theme_color_override("font_color", Color.YELLOW)
+	elif new_ammo <=3:
+		%AmmoLabel.add_theme_color_override("font_color", Color.RED)
 
 
 func _on_resume_button_pressed() -> void:

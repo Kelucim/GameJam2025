@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bee37yfm0h2vl"]
+[gd_scene load_steps=18 format=3 uid="uid://bee37yfm0h2vl"]
 
 [ext_resource type="Script" uid="uid://dq7pxm17rth7q" path="res://Levels/level.gd" id="1_rf6l5"]
 [ext_resource type="PackedScene" uid="uid://dsiesba77e41y" path="res://Player/player.tscn" id="2_dilhk"]
@@ -16,6 +16,14 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xoyoh"]
 size = Vector3(8, 1, 25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lk57d"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_2hkqn"]
+material = SubResource("StandardMaterial3D_lk57d")
 
 [sub_resource type="Environment" id="Environment_77x7w"]
 background_color = Color(0.86, 0.716667, 0, 1)
@@ -180,33 +188,65 @@ shape = SubResource("BoxShape3D_xoyoh")
 transform = Transform3D(0.666667, 0, 0, 0, 0.833333, 0, 0, 0, 0.666667, 0.142483, 2.72379, -1.43834)
 shadow_enabled = true
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/OmniLight3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.383621, 0)
+mesh = SubResource("SphereMesh_2hkqn")
+
 [node name="OmniLight3D2" type="OmniLight3D" parent="Level"]
 transform = Transform3D(0.666667, 0, 0, 0, 0.833333, 0, 0, 0, 0.666667, -1.24764, 2.72379, -7.6732)
 shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/OmniLight3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.383621, 0)
+mesh = SubResource("SphereMesh_2hkqn")
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Level"]
 transform = Transform3D(0.666667, 0, 0, 0, 0.833333, 0, 0, 0, 0.666667, -5.06323, 2.72379, -7.10133)
 shadow_enabled = true
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/OmniLight3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.383621, 0)
+mesh = SubResource("SphereMesh_2hkqn")
+
 [node name="OmniLight3D5" type="OmniLight3D" parent="Level"]
 transform = Transform3D(0.666667, 0, 0, 0, 0.833333, 0, 0, 0, 0.666667, -3.87388, 2.72379, -12.5423)
 shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/OmniLight3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.383621, 0)
+mesh = SubResource("SphereMesh_2hkqn")
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="Level"]
 transform = Transform3D(0.666667, 0, 0, 0, 0.833333, 0, 0, 0, 0.666667, 0.111337, 2.72379, -11.911)
 shadow_enabled = true
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/OmniLight3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.383621, 0)
+mesh = SubResource("SphereMesh_2hkqn")
+
 [node name="OmniLight3D7" type="OmniLight3D" parent="Level"]
 transform = Transform3D(0.666667, 0, 0, 0, 0.833333, 0, 0, 0, 0.666667, -1.2285, 2.72379, -16.2919)
 shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/OmniLight3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.383621, 0)
+mesh = SubResource("SphereMesh_2hkqn")
 
 [node name="OmniLight3D8" type="OmniLight3D" parent="Level"]
 transform = Transform3D(0.666667, 0, 0, 0, 0.833333, 0, 0, 0, 0.666667, -5.11758, 2.72379, -16.0525)
 shadow_enabled = true
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/OmniLight3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.383621, 0)
+mesh = SubResource("SphereMesh_2hkqn")
+
 [node name="OmniLight3D4" type="OmniLight3D" parent="Level"]
 transform = Transform3D(0.666667, 0, 0, 0, 0.833333, 0, 0, 0, 0.666667, -4.01549, 2.72379, -0.304706)
 shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/OmniLight3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.383621, 0)
+mesh = SubResource("SphereMesh_2hkqn")
 
 [node name="Ceiling" parent="Level" instance=ExtResource("8_rs4xw")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.729, 3.996, -9.712)

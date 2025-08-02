@@ -3,8 +3,9 @@ class_name enemy
 
 @export var max_health : int = 100
 @export var damage : int = 2
-
-@onready var SFX = $AttackSFX
+@export var SFX : AudioStreamPlayer3D
+@export var Animations : enemy_animaton_node
+@export var got_hit_sfx : AudioStreamPlayer3D
 
 var health : int = 1
 var player_los_check_position
@@ -39,7 +40,7 @@ func _physics_process(delta: float) -> void:
 
 func lose_healt(how_much : int):
 	health -= how_much
-	$GotHitSFX.play()
+	got_hit_sfx.play()
 	if health <= 0:
 		died()
 
@@ -61,6 +62,7 @@ func _on_attack_timer_timeout() -> void:
 func is_still_colliding():
 	if %WeaponRaycast.is_colliding() && %PlayerWeaponRaycast.is_colliding():
 		SFX.play()
+		Animations.play_shooting_animation()
 		
 		if %WeaponRaycast.get_collider() is player_ghost and %PlayerWeaponRaycast.get_collider() is player:
 			player_hitbox.player_lost_health(damage)
