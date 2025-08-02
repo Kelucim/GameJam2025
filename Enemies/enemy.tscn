@@ -56,12 +56,14 @@ unique_name_in_owner = true
 collision_mask = 3
 
 [node name="AttackSFX" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20252, -0.688409)
 stream = ExtResource("3_47qgu")
 
 [node name="GunBarrel" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.937117, -0.227733)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19674, -0.373433)
 
 [node name="GotHitSFX" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22782, 0)
 stream = ExtResource("4_572h1")
 unit_size = 5.0
 

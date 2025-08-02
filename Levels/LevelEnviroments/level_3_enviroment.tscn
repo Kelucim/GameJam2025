@@ -30,7 +30,7 @@ height = 0.5
 
 [node name="ExitDoor" parent="." instance=ExtResource("1_eufh8")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0.5, -17.5)
-next_scene = "res://Levels/level_1.tscn"
+next_scene = "res://Levels/level_4.tscn"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

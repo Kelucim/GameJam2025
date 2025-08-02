@@ -14,12 +14,12 @@ script = ExtResource("1_fa81k")
 number_of_enemies = 5
 player_node = NodePath("Player")
 player_ghost_node = NodePath("PlayerGhost")
-current_level = "res://Levels/level_2.tscn"
+current_level = "res://Levels/level_3.tscn"
 
 [node name="UI" parent="." instance=ExtResource("2_ck3gp")]
 
 [node name="Player" parent="." instance=ExtResource("3_trpa2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49327, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49327, 0.742425)
 
 [node name="PlayerGhost" parent="." instance=ExtResource("4_4t7ew")]
 
