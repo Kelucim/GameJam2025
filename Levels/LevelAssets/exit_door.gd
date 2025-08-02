@@ -15,6 +15,7 @@ func _process(_delta: float) -> void:
 		door_opening_audio.play()
 		$WallExit._play_open_door()
 		%LoadArea.monitoring = true
+		$CPUParticles3D.emitting = true
 
 
 func _on_load_area_body_entered(_body: Node3D) -> void:
