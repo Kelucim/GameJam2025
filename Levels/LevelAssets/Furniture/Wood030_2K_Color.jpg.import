@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc4ay0gjotn1y"
-path.s3tc="res://.godot/imported/Floor_WoodFlooringFine006_NRM_3K.jpg-7ba39ff79fd82cdd7cba6cf7c0ac6910.s3tc.ctex"
+uid="uid://b6w5yhhsk3i25"
+path.s3tc="res://.godot/imported/Wood030_2K_Color.jpg-aaabd900200cc544ff43c4ade00a82c7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Levels/LevelAssets/Floor_WoodFlooringFine006_NRM_3K.jpg"
-dest_files=["res://.godot/imported/Floor_WoodFlooringFine006_NRM_3K.jpg-7ba39ff79fd82cdd7cba6cf7c0ac6910.s3tc.ctex"]
+source_file="res://Levels/LevelAssets/Furniture/Wood030_2K_Color.jpg"
+dest_files=["res://.godot/imported/Wood030_2K_Color.jpg-aaabd900200cc544ff43c4ade00a82c7.s3tc.ctex"]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://Levels/LevelAssets/Floor_WoodFlooringFine006_NRM_3K.jpg"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

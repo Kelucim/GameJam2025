@@ -48,7 +48,7 @@ func change_ammo(new_ammo, max_ammo):
 	%AmmoLabel.text = str(new_ammo,"/",max_ammo)
 	
 	if new_ammo > 3:
-		%AmmoLabel.add_theme_color_override("font_color", Color.YELLOW)
+		%AmmoLabel.add_theme_color_override("font_color", Color.GREEN)
 	elif new_ammo <=3:
 		%AmmoLabel.add_theme_color_override("font_color", Color.RED)
 
