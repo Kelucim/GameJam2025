@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b88vw2766tj6n"
-path.s3tc="res://.godot/imported/Fabric001_2K_Color.jpg-59f1969d45ff15a455b19014d160ac1f.s3tc.ctex"
+uid="uid://b7yttujtd4dyd"
+path.s3tc="res://.godot/imported/Player_body.png-58825d5d0cce6259b89288f4f98849be.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Levels/LevelAssets/Furniture/Fabric001_2K_Color.jpg"
-dest_files=["res://.godot/imported/Fabric001_2K_Color.jpg-59f1969d45ff15a455b19014d160ac1f.s3tc.ctex"]
+source_file="res://Player/Visual Assets/Player_body.png"
+dest_files=["res://.godot/imported/Player_body.png-58825d5d0cce6259b89288f4f98849be.s3tc.ctex"]
 
 [params]
 
