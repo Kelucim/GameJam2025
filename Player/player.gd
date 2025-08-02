@@ -15,11 +15,13 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	health = MAX_HEALTH
 	get_tree().call_group("game_ui","change_health", health)
-	mouse_sensitivity = GlobalVar.mouse_sensitivity
+	change_sensitivity(GlobalVar.mouse_sensitivity)
 
 	
 func _physics_process(delta: float) -> void:
-
+	
+	print_debug(mouse_sensitivity)
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -27,8 +29,10 @@ func _physics_process(delta: float) -> void:
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
 	if input_dir != Vector2.ZERO and $WalkingAudioStream.playing == false:
+		#$PlayerCamera/Pistol.play_walking_animation()
 		$WalkingAudioStream.play()
 	elif input_dir == Vector2.ZERO:
+		#$PlayerCamera/Pistol.stop_walking_animation()
 		$WalkingAudioStream.stop()
 	
 	

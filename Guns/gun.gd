@@ -8,6 +8,7 @@ extends Node3D
 @onready var gunshoot_audio = $GunShotAudioStream
 @onready var reload_audio = $ReloadAudioStream
 @onready var blood_particles : PackedScene = preload("res://Player/blood_particles.tscn")
+@onready var hand_animations : player_animation_node = $PlayerViewmodel
 
 var ammo : int
 var reloading : bool = false
@@ -22,6 +23,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if (ammo == 0 or Input.is_action_just_pressed("reload")) and !reloading:
 		reloading = true
+		hand_animations.play_reload()
 		reload_audio.play()
 		%ReloadTimer.start()
 		print_debug("reloading")
@@ -36,6 +38,7 @@ func _process(_delta: float) -> void:
 	
 
 func shoot():
+	hand_animations.play_shoot()
 	gunshoot_audio.play()
 	ammo = ammo-1
 	if %RayCast.is_colliding():
@@ -57,3 +60,10 @@ func _on_reload_timer_timeout() -> void:
 
 func update_ammo_count():
 	get_tree().call_group("game_ui","change_ammo", ammo, max_ammo)
+	
+func play_walking_animation():
+	hand_animations.play_walking()
+
+func stop_walking_animation():
+	pass
+	hand_animations.stop_walking()

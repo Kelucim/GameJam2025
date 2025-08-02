@@ -3,21 +3,10 @@
 [ext_resource type="Script" uid="uid://cr4kpmuxspurl" path="res://Guns/gun.gd" id="1_gxrfj"]
 [ext_resource type="AudioStream" uid="uid://d4m713kfq7qao" path="res://Guns/Audio/PistoGunshot.mp3" id="3_gcii7"]
 [ext_resource type="AudioStream" uid="uid://c6d4i4lke7210" path="res://Guns/Audio/Reload.mp3" id="4_2hk77"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_soq8o"]
-radius = 0.1
-height = 1.0
+[ext_resource type="PackedScene" uid="uid://b1ji1kwe5wud6" path="res://Player/Visual Assets/player_viewmodel.tscn" id="4_g0q6x"]
 
 [node name="Pistol" type="Node3D"]
 script = ExtResource("1_gxrfj")
-
-[node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(0.999743, 0, 0.0226873, 0, 1, 0, -0.0226873, 0, 0.999743, 0.226, -0.269, -0.464)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_soq8o")
-skeleton = NodePath("../..")
 
 [node name="ReloadTimer" type="Timer" parent="."]
 unique_name_in_owner = true
@@ -36,5 +25,8 @@ stream = ExtResource("3_gcii7")
 [node name="ReloadAudioStream" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.454242)
 stream = ExtResource("4_2hk77")
+
+[node name="PlayerViewmodel" parent="." instance=ExtResource("4_g0q6x")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.168848, -1.70903, 0.230257)
 
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

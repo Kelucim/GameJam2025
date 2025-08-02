@@ -14,7 +14,7 @@ func _physics_process(_delta: float) -> void:
 func follow_player(player_position: Vector3):
 	var distance_from_player = player_position.distance_to(global_position)
 	
-	if distance_from_player > 1.5:
+	if distance_from_player > 1:
 		speed = 6
 	else:
 		speed = 3
