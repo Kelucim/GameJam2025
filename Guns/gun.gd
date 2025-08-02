@@ -7,6 +7,7 @@ extends Node3D
 
 @onready var gunshoot_audio = $GunShotAudioStream
 @onready var reload_audio = $ReloadAudioStream
+@onready var blood_particles : PackedScene = preload("res://Player/blood_particles.tscn")
 
 var ammo : int
 var reloading : bool = false
@@ -32,13 +33,16 @@ func _process(_delta: float) -> void:
 		else:
 			if Input.is_action_just_pressed("attack"):
 				shoot()
-
+	
 
 func shoot():
 	gunshoot_audio.play()
 	ammo = ammo-1
 	if %RayCast.is_colliding():
 		if %RayCast.get_collider() is hit_box:
+			var blood_instance : CPUParticles3D = blood_particles.instantiate()
+			blood_instance.transform.origin = %RayCast.get_collision_point()
+			get_parent().get_parent().add_sibling(blood_instance)
 			var target : hit_box= %RayCast.get_collider()
 			target.got_hit(damage)
 	print_debug("shoot")

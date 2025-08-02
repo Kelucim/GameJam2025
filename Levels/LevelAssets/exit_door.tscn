@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://it1xaooa30r5"]
+[gd_scene load_steps=7 format=3 uid="uid://it1xaooa30r5"]
 
 [ext_resource type="Script" uid="uid://0lv0v2v4wspi" path="res://Levels/LevelAssets/exit_door.gd" id="1_x6kpj"]
 [ext_resource type="PackedScene" uid="uid://bkriojcv5u8bi" path="res://Levels/LevelAssets/wall_exit.tscn" id="2_yc4db"]
@@ -17,15 +17,6 @@ emission_energy_multiplier = 16.0
 material = SubResource("StandardMaterial3D_ihns8")
 flip_faces = true
 size = Vector3(2.5, 2.5, 2.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yc4db"]
-albedo_color = Color(0, 0, 0, 1)
-metallic = 1.0
-
-[sub_resource type="SphereMesh" id="SphereMesh_evwy8"]
-material = SubResource("StandardMaterial3D_yc4db")
-radius = 0.2
-height = 0.4
 
 [node name="ExitDoor" type="Node3D"]
 script = ExtResource("1_x6kpj")
@@ -55,20 +46,5 @@ process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0965, 0)
 stream = ExtResource("3_yc4db")
 unit_size = 5.0
-
-[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.475261, 1.3216, 1.03428, 0)
-emitting = false
-amount = 20
-mesh = SubResource("SphereMesh_evwy8")
-emission_shape = 3
-emission_box_extents = Vector3(1, 1, 1)
-direction = Vector3(-1, -0.5, 0)
-spread = 23.22
-gravity = Vector3(0, 0, 0)
-initial_velocity_min = 1.0
-initial_velocity_max = 2.0
-scale_amount_min = 0.8
-scale_amount_max = 1.2
 
 [connection signal="body_entered" from="LoadArea" to="." method="_on_load_area_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bee37yfm0h2vl"]
+[gd_scene load_steps=16 format=3 uid="uid://bee37yfm0h2vl"]
 
 [ext_resource type="Script" uid="uid://dq7pxm17rth7q" path="res://Levels/level.gd" id="1_rf6l5"]
 [ext_resource type="PackedScene" uid="uid://dsiesba77e41y" path="res://Player/player.tscn" id="2_dilhk"]
@@ -17,19 +17,14 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_xoyoh"]
 size = Vector3(8, 1, 25)
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xoyoh"]
-sky_top_color = Color(0.172277, 0.330019, 0.664613, 1)
-sky_horizon_color = Color(0.890608, 0.821014, 0.653749, 1)
-
-[sub_resource type="Sky" id="Sky_xoyoh"]
-sky_material = SubResource("ProceduralSkyMaterial_xoyoh")
-
 [sub_resource type="Environment" id="Environment_77x7w"]
-background_mode = 2
-sky = SubResource("Sky_xoyoh")
+background_color = Color(0.86, 0.716667, 0, 1)
 ambient_light_source = 2
 ambient_light_color = Color(0.219501, 0.219501, 0.219501, 1)
-fog_density = 0.0322
+glow_intensity = 8.0
+glow_bloom = 1.0
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.4152
 
 [node name="Level1" type="Node" node_paths=PackedStringArray("player_node", "player_ghost_node")]
 script = ExtResource("1_rf6l5")
