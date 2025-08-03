@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b8e24foitjdv7" path="res://Levels/LevelAssets/Floor.blend" id="6_cn2sd"]
 [ext_resource type="PackedScene" uid="uid://bxuw83jbh4x40" path="res://Levels/LevelAssets/Ceiling.blend" id="6_rw3mj"]
 [ext_resource type="PackedScene" uid="uid://bkcaobecswoob" path="res://Levels/LevelAssets/Decorations/MountainLandscapePainting.glb" id="8_vv7ca"]
-[ext_resource type="AudioStream" uid="uid://cte7ifpcy1gn4" path="res://Menu/game-background-sound-3423362.mp3" id="8_ws7s4"]
+[ext_resource type="AudioStream" uid="uid://cte7ifpcy1gn4" path="res://Menu/MainMenuAssets/game-background-sound-3423362.mp3" id="8_ws7s4"]
 [ext_resource type="PackedScene" uid="uid://dm0hx3lls3qs1" path="res://Levels/LevelAssets/Furniture/table.blend" id="9_ywk15"]
 [ext_resource type="PackedScene" uid="uid://cjoc4q1g5l414" path="res://Levels/LevelAssets/Furniture/chair.blend" id="10_ws7s4"]
 
