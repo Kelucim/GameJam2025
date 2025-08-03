@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://1wg0u4qujttl"]
+[gd_scene load_steps=25 format=3 uid="uid://1wg0u4qujttl"]
 
 [ext_resource type="PackedScene" uid="uid://it1xaooa30r5" path="res://Levels/LevelAssets/exit_door.tscn" id="1_cd86k"]
 [ext_resource type="PackedScene" uid="uid://ds4lmuccy0eua" path="res://Levels/LevelAssets/Wall.blend" id="2_swx4b"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://o8g5wj5qf25n" path="res://Levels/LevelAssets/Decorations/PoppyFieldsPainting.glb" id="17_u4mu1"]
 [ext_resource type="PackedScene" uid="uid://bkcaobecswoob" path="res://Levels/LevelAssets/Decorations/MountainLandscapePainting.glb" id="18_eor2k"]
 [ext_resource type="PackedScene" uid="uid://chfynwj814ofm" path="res://Levels/LevelAssets/Decorations/PottedPlant.glb" id="19_6xyvw"]
+[ext_resource type="PackedScene" uid="uid://dl5y0qrovmv5d" path="res://Levels/LevelAssets/Decorations/Clock.glb" id="20_532sj"]
+[ext_resource type="PackedScene" uid="uid://bc1r7wehvxcwh" path="res://Levels/LevelAssets/Furniture/CupboardOnWall.blend" id="21_38a6j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xoyoh"]
 size = Vector3(8, 1, 25)
@@ -285,3 +287,9 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.276
 
 [node name="PottedPlant" parent="." instance=ExtResource("19_6xyvw")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.14368, 1.63291, -6.8685)
+
+[node name="Clock" parent="." instance=ExtResource("20_532sj")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 1.22661, 2.26091, -1.3261)
+
+[node name="CupboardOnWall2" parent="." instance=ExtResource("21_38a6j")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -2.12, 2.266, -2.949)

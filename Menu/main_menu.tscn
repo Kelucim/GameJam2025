@@ -1,13 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2tcrkoorqc63"]
+[gd_scene load_steps=14 format=3 uid="uid://d2tcrkoorqc63"]
 
 [ext_resource type="PackedScene" uid="uid://ds4lmuccy0eua" path="res://Levels/LevelAssets/Wall.blend" id="1_ci1se"]
 [ext_resource type="Script" uid="uid://br0ixfudn8q8a" path="res://Menu/main_menu.gd" id="1_dtkyu"]
 [ext_resource type="PackedScene" uid="uid://dmqppkpvrwv3m" path="res://Levels/LevelAssets/Wall_Door_Closed.blend" id="2_dtkyu"]
 [ext_resource type="Theme" uid="uid://8kbukp78eoe6" path="res://Menu/main_menu.tres" id="2_ohgnh"]
-[ext_resource type="AudioStream" uid="uid://cyw2aala1d3lq" path="res://Menu/game-background-sound-342336.mp3" id="5_fw3rq"]
+[ext_resource type="Texture2D" uid="uid://1ohshtxh2i0h" path="res://Menu/Controls.png" id="3_ws7s4"]
 [ext_resource type="PackedScene" uid="uid://b8e24foitjdv7" path="res://Levels/LevelAssets/Floor.blend" id="6_cn2sd"]
 [ext_resource type="PackedScene" uid="uid://bxuw83jbh4x40" path="res://Levels/LevelAssets/Ceiling.blend" id="6_rw3mj"]
 [ext_resource type="PackedScene" uid="uid://bkcaobecswoob" path="res://Levels/LevelAssets/Decorations/MountainLandscapePainting.glb" id="8_vv7ca"]
+[ext_resource type="AudioStream" uid="uid://cte7ifpcy1gn4" path="res://Menu/game-background-sound-3423362.mp3" id="8_ws7s4"]
 [ext_resource type="PackedScene" uid="uid://dm0hx3lls3qs1" path="res://Levels/LevelAssets/Furniture/table.blend" id="9_ywk15"]
 [ext_resource type="PackedScene" uid="uid://cjoc4q1g5l414" path="res://Levels/LevelAssets/Furniture/chair.blend" id="10_ws7s4"]
 
@@ -92,6 +93,12 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="TextureRect" type="TextureRect" parent="MMUI/MarginContainer/HSplitContainer/CenterContainer"]
+custom_minimum_size = Vector2(0, 900)
+layout_mode = 2
+texture = ExtResource("3_ws7s4")
+expand_mode = 2
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.96806, 0.250718, 0, -0.250718, 0.96806, 0, 1.12741, 2.13581)
 
@@ -135,7 +142,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49502, 0)
 environment = SubResource("Environment_ci1se")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_fw3rq")
+stream = ExtResource("8_ws7s4")
+volume_db = -10.0
 autoplay = true
 
 [node name="MountainLandscapePainting" parent="." instance=ExtResource("8_vv7ca")]

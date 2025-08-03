@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dsiesba77e41y" path="res://Player/player.tscn" id="3_77xid"]
 [ext_resource type="PackedScene" uid="uid://tnoe6hb5cag5" path="res://Player/player_ghost.tscn" id="4_m0m22"]
 [ext_resource type="Environment" uid="uid://8v7r54ssiajg" path="res://Levels/level_enviroment_node.tres" id="5_utic7"]
-[ext_resource type="AudioStream" uid="uid://bymxihjfckae2" path="res://Levels/LevelAssets/Audio/bass-guitar-death-metal-loop-240-bpm-101327.mp3" id="6_x4mg1"]
+[ext_resource type="PackedScene" uid="uid://rkhyv7j0if5y" path="res://Levels/LevelAssets/Audio/InGameMusic.tscn" id="8_ben3k"]
 [ext_resource type="PackedScene" uid="uid://dbfwgliq2746w" path="res://Enemies/enemy.tscn" id="8_fcg6d"]
 [ext_resource type="PackedScene" uid="uid://cdj67ch63xv51" path="res://Levels/LevelEnviroments/level_4_enviroment.tscn" id="8_fqog2"]
 
@@ -25,11 +25,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.251379, 1.49327, 0.843239)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("5_utic7")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_x4mg1")
-volume_db = -10.0
-autoplay = true
 
 [node name="Enemy" parent="." instance=ExtResource("8_fcg6d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69038, 1.05711, -0.8875)
@@ -53,3 +48,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.35541, 1.05711, -13.2823)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5537, 1.05711, -8.4906)
 
 [node name="Level" parent="." instance=ExtResource("8_fqog2")]
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("8_ben3k")]

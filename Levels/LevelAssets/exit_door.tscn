@@ -46,6 +46,5 @@ shadow_enabled = true
 process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0965, 0)
 stream = ExtResource("3_yc4db")
-unit_size = 5.0
 
 [connection signal="body_entered" from="LoadArea" to="." method="_on_load_area_body_entered"]

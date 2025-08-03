@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c32jk74x3yyu6" path="res://Enemies/enemy.gd" id="1_bxkaj"]
 [ext_resource type="PackedScene" uid="uid://dov2nsy6wbhgj" path="res://Enemies/hit_box.tscn" id="2_bxkaj"]
 [ext_resource type="AudioStream" uid="uid://d4m713kfq7qao" path="res://Guns/Audio/PistoGunshot.mp3" id="3_47qgu"]
-[ext_resource type="AudioStream" uid="uid://daewrxsese22p" path="res://Enemies/EnemyHurt.mp3" id="4_572h1"]
+[ext_resource type="AudioStream" uid="uid://daewrxsese22p" path="res://Enemies/Hurt4.mp3" id="4_572h1"]
 [ext_resource type="PackedScene" uid="uid://brvl3dencbued" path="res://Enemies/EnemyModelScenes/soldier_standing.tscn" id="5_rt1x0"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_rt1x0"]

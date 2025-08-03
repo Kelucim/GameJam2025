@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cq81i8d0guea"]
+[gd_scene load_steps=23 format=3 uid="uid://cq81i8d0guea"]
 
 [ext_resource type="PackedScene" uid="uid://it1xaooa30r5" path="res://Levels/LevelAssets/exit_door.tscn" id="1_eufh8"]
 [ext_resource type="PackedScene" uid="uid://ds4lmuccy0eua" path="res://Levels/LevelAssets/Wall.blend" id="2_8ljva"]
@@ -16,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://ci6vxdmmu0nb5" path="res://Levels/LevelAssets/Decorations/FlowerPainting2.glb" id="15_8ljva"]
 [ext_resource type="PackedScene" uid="uid://u2p72tw7373m" path="res://Levels/LevelAssets/Furniture/tv.blend" id="15_svm1a"]
 [ext_resource type="PackedScene" uid="uid://chfynwj814ofm" path="res://Levels/LevelAssets/Decorations/PottedPlant.glb" id="16_8ljva"]
+[ext_resource type="PackedScene" uid="uid://bc1r7wehvxcwh" path="res://Levels/LevelAssets/Furniture/CupboardOnWall.blend" id="17_irwb7"]
+[ext_resource type="PackedScene" uid="uid://yve68s1d3omi" path="res://Levels/LevelAssets/Decorations/Carpet.glb" id="18_hlu1d"]
+[ext_resource type="PackedScene" uid="uid://dl5y0qrovmv5d" path="res://Levels/LevelAssets/Decorations/Clock.glb" id="19_pport"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xoyoh"]
 size = Vector3(8, 1, 25)
@@ -273,3 +276,15 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.248
 
 [node name="PottedPlant" parent="." instance=ExtResource("16_8ljva")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.75496, 0.708315, 1.72909)
+
+[node name="CupboardOnWall2" parent="." instance=ExtResource("17_irwb7")]
+transform = Transform3D(-5.24537e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.24537e-08, -1.49115, 2.349, -13.04)
+
+[node name="CupboardOnWall3" parent="." instance=ExtResource("17_irwb7")]
+transform = Transform3D(-5.24537e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.24537e-08, -1.49115, 2.349, -13.9002)
+
+[node name="Carpet2" parent="." instance=ExtResource("18_hlu1d")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.30664, 0.520057, -8.87706)
+
+[node name="Clock" parent="." instance=ExtResource("19_pport")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 1.22661, 2.26091, -1.3261)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://rkhyv7j0if5y"]
+
+[ext_resource type="AudioStream" uid="uid://0jvaakjrs0w4" path="res://Levels/LevelAssets/Audio/action-loop-g-100-bpm-brvhrtz-226161.mp3" id="1_c2xqk"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_c2xqk")
+volume_db = -10.0
+autoplay = true
