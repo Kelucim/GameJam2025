@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2tcrkoorqc63"]
+[gd_scene load_steps=13 format=3 uid="uid://d2tcrkoorqc63"]
 
 [ext_resource type="PackedScene" uid="uid://ds4lmuccy0eua" path="res://Levels/LevelAssets/Wall.blend" id="1_ci1se"]
 [ext_resource type="Script" uid="uid://br0ixfudn8q8a" path="res://Menu/main_menu.gd" id="1_dtkyu"]
@@ -7,6 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://cyw2aala1d3lq" path="res://Menu/game-background-sound-342336.mp3" id="5_fw3rq"]
 [ext_resource type="PackedScene" uid="uid://b8e24foitjdv7" path="res://Levels/LevelAssets/Floor.blend" id="6_cn2sd"]
 [ext_resource type="PackedScene" uid="uid://bxuw83jbh4x40" path="res://Levels/LevelAssets/Ceiling.blend" id="6_rw3mj"]
+[ext_resource type="PackedScene" uid="uid://bkcaobecswoob" path="res://Levels/LevelAssets/Decorations/MountainLandscapePainting.glb" id="8_vv7ca"]
+[ext_resource type="PackedScene" uid="uid://dm0hx3lls3qs1" path="res://Levels/LevelAssets/Furniture/table.blend" id="9_ywk15"]
+[ext_resource type="PackedScene" uid="uid://cjoc4q1g5l414" path="res://Levels/LevelAssets/Furniture/chair.blend" id="10_ws7s4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ci1se"]
 size = Vector3(5, 5, 0.5)
@@ -40,35 +43,40 @@ layout_mode = 2
 dragging_enabled = false
 dragger_visibility = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MMUI/MarginContainer/HSplitContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MMUI/MarginContainer/HSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Control2" type="Control" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Button" type="Button" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Play"
-
-[node name="Label" type="Label" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 51
-text = "Volume:"
-
-[node name="MarginContainer" type="MarginContainer" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer"]
-layout_mode = 2
 theme_override_constants/margin_left = 180
 theme_override_constants/margin_right = 180
 
-[node name="VolimeSlider" type="HSlider" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MMUI/MarginContainer/HSplitContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control2" type="Control" parent="MMUI/MarginContainer/HSplitContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="MMUI/MarginContainer/HSplitContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "Play"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MMUI/MarginContainer/HSplitContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MMUI/MarginContainer/HSplitContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 51
+text = "Volume:"
+
+[node name="VolimeSlider" type="HSlider" parent="MMUI/MarginContainer/HSplitContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 min_value = -80.0
 max_value = 0.0
 value = -10.0
@@ -76,7 +84,7 @@ scrollable = false
 tick_count = 80
 ticks_on_borders = true
 
-[node name="Control" type="Control" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="MMUI/MarginContainer/HSplitContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -130,5 +138,20 @@ environment = SubResource("Environment_ci1se")
 stream = ExtResource("5_fw3rq")
 autoplay = true
 
-[connection signal="pressed" from="MMUI/MarginContainer/HSplitContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="value_changed" from="MMUI/MarginContainer/HSplitContainer/VBoxContainer/MarginContainer/VolimeSlider" to="." method="_on_h_slider_value_changed"]
+[node name="MountainLandscapePainting" parent="." instance=ExtResource("8_vv7ca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114572, 1.19378, -0.966652)
+
+[node name="table" parent="." instance=ExtResource("9_ywk15")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.255203, -0.49502, -0.338382)
+
+[node name="chair" parent="." instance=ExtResource("10_ws7s4")]
+transform = Transform3D(0.169076, 0, 1.49044, 0, 1.5, 0, -1.49044, 0, 0.169076, -1.3293, -0.49502, -0.322907)
+
+[node name="chair2" parent="." instance=ExtResource("10_ws7s4")]
+transform = Transform3D(0.678582, 0, -1.33773, 0, 1.5, 0, 1.33773, 0, 0.678582, 0.894809, -0.49502, -0.456993)
+
+[node name="chair3" parent="." instance=ExtResource("10_ws7s4")]
+transform = Transform3D(-1.48496, 0, -0.211896, 0, 1.5, 0, 0.211896, 0, -1.48496, -0.157273, -0.49502, 0.28587)
+
+[connection signal="pressed" from="MMUI/MarginContainer/HSplitContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="value_changed" from="MMUI/MarginContainer/HSplitContainer/MarginContainer/VBoxContainer/HBoxContainer/VolimeSlider" to="." method="_on_h_slider_value_changed"]

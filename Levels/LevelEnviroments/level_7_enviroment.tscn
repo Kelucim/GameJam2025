@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bynivsdqhway"]
+[gd_scene load_steps=23 format=3 uid="uid://bynivsdqhway"]
 
 [ext_resource type="PackedScene" uid="uid://it1xaooa30r5" path="res://Levels/LevelAssets/exit_door.tscn" id="1_x286r"]
 [ext_resource type="PackedScene" uid="uid://ds4lmuccy0eua" path="res://Levels/LevelAssets/Wall.blend" id="2_3o0bc"]
@@ -15,6 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://iaettolq7sws" path="res://Levels/LevelAssets/Furniture/Cupboard.blend" id="13_hasps"]
 [ext_resource type="PackedScene" uid="uid://bs45bxkce1bi2" path="res://Levels/LevelAssets/Furniture/Kitchen sink.blend" id="14_d3jft"]
 [ext_resource type="PackedScene" uid="uid://u2p72tw7373m" path="res://Levels/LevelAssets/Furniture/tv.blend" id="15_xbmvk"]
+[ext_resource type="PackedScene" uid="uid://ci6vxdmmu0nb5" path="res://Levels/LevelAssets/Decorations/FlowerPainting2.glb" id="16_v362o"]
+[ext_resource type="PackedScene" uid="uid://bkcaobecswoob" path="res://Levels/LevelAssets/Decorations/MountainLandscapePainting.glb" id="17_0sw6c"]
+[ext_resource type="PackedScene" uid="uid://chfynwj814ofm" path="res://Levels/LevelAssets/Decorations/PottedPlant.glb" id="18_0sw6c"]
+[ext_resource type="PackedScene" uid="uid://o8g5wj5qf25n" path="res://Levels/LevelAssets/Decorations/PoppyFieldsPainting.glb" id="19_proef"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xoyoh"]
 size = Vector3(8, 1, 25)
@@ -32,7 +36,7 @@ height = 0.5
 
 [node name="ExitDoor" parent="." instance=ExtResource("1_x286r")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0.5, -17.5)
-next_scene = "res://Levels/level_1.tscn"
+next_scene = "res://Levels/level_8.tscn"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -269,3 +273,15 @@ transform = Transform3D(-5.24537e-08, 0, 1.72986, 0, 1.2, 0, -1.2, 0, -7.56145e-
 
 [node name="Wall_Door_Closed" parent="." instance=ExtResource("4_0sw6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.5, -10)
+
+[node name="FlowerPainting2" parent="." instance=ExtResource("16_v362o")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.24554, 2.31876, -12.3276)
+
+[node name="MountainLandscapePainting" parent="." instance=ExtResource("17_0sw6c")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.228566, 2.30768, -10.2245)
+
+[node name="PottedPlant" parent="." instance=ExtResource("18_0sw6c")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.99182, 1.6289, -6.97791)
+
+[node name="PoppyFieldsPainting" parent="." instance=ExtResource("19_proef")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.2331, 2.32585, 0.647332)

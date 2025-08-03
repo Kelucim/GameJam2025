@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cay1nm0a3itjy"]
+[gd_scene load_steps=22 format=3 uid="uid://cay1nm0a3itjy"]
 
 [ext_resource type="PackedScene" uid="uid://it1xaooa30r5" path="res://Levels/LevelAssets/exit_door.tscn" id="1_k1tdw"]
 [ext_resource type="PackedScene" uid="uid://ds4lmuccy0eua" path="res://Levels/LevelAssets/Wall.blend" id="2_mstb7"]
@@ -15,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://crs876q3qhxdk" path="res://Levels/LevelAssets/Furniture/fridge.blend" id="12_mh8bb"]
 [ext_resource type="PackedScene" uid="uid://bs45bxkce1bi2" path="res://Levels/LevelAssets/Furniture/Kitchen sink.blend" id="13_72qro"]
 [ext_resource type="PackedScene" uid="uid://iaettolq7sws" path="res://Levels/LevelAssets/Furniture/Cupboard.blend" id="14_qwkae"]
+[ext_resource type="PackedScene" uid="uid://ci6vxdmmu0nb5" path="res://Levels/LevelAssets/Decorations/FlowerPainting2.glb" id="16_n10lc"]
+[ext_resource type="PackedScene" uid="uid://o8g5wj5qf25n" path="res://Levels/LevelAssets/Decorations/PoppyFieldsPainting.glb" id="17_pfipt"]
+[ext_resource type="PackedScene" uid="uid://bkcaobecswoob" path="res://Levels/LevelAssets/Decorations/MountainLandscapePainting.glb" id="18_q6l35"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xoyoh"]
 size = Vector3(8, 1, 25)
@@ -266,3 +269,12 @@ transform = Transform3D(1.49783, 0, -0.0807, 0, 1.5, 0, 0.0807, 0, 1.49783, -2.1
 
 [node name="chair2" parent="." instance=ExtResource("9_3ybov")]
 transform = Transform3D(-0.936637, 0, 1.17163, 0, 1.5, 0, -1.17163, 0, -0.936637, -3.45457, 0.508199, -10.6212)
+
+[node name="FlowerPainting2" parent="." instance=ExtResource("16_n10lc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.230605, 2.3409, -9.79245)
+
+[node name="PoppyFieldsPainting" parent="." instance=ExtResource("17_pfipt")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.22443, 2.31449, -0.039985)
+
+[node name="MountainLandscapePainting" parent="." instance=ExtResource("18_q6l35")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.22935, 2.28122, -6.06085)

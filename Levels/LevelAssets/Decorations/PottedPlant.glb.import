@@ -32,6 +32,19 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Potted plant": {
+"generate/physics": true,
+"physics/layer": 2,
+"physics/mask": 2,
+"physics/physics_material_override": null,
+"physics/shape_type": 6,
+"primitive/height": 5.0,
+"primitive/position": Vector3(0, 1.5, 0),
+"primitive/size": Vector3(2, 10, 2)
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://geafcoboed0o"]
+[gd_scene load_steps=22 format=3 uid="uid://geafcoboed0o"]
 
 [ext_resource type="PackedScene" uid="uid://it1xaooa30r5" path="res://Levels/LevelAssets/exit_door.tscn" id="1_v5ca5"]
 [ext_resource type="PackedScene" uid="uid://ds4lmuccy0eua" path="res://Levels/LevelAssets/Wall.blend" id="2_5ajhp"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://32s73rbsep4n" path="res://Levels/LevelAssets/Furniture/couch.blend" id="13_kimhl"]
 [ext_resource type="PackedScene" uid="uid://dm0hx3lls3qs1" path="res://Levels/LevelAssets/Furniture/table.blend" id="14_6bbqg"]
 [ext_resource type="PackedScene" uid="uid://cjoc4q1g5l414" path="res://Levels/LevelAssets/Furniture/chair.blend" id="15_g22ia"]
+[ext_resource type="PackedScene" uid="uid://ci6vxdmmu0nb5" path="res://Levels/LevelAssets/Decorations/FlowerPainting2.glb" id="16_5ajhp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xoyoh"]
 size = Vector3(8, 1, 25)
@@ -280,3 +281,6 @@ transform = Transform3D(5.82147e-16, -0.5, -2.18557e-08, 0.241855, -1.91287e-08,
 
 [node name="chair2" parent="." instance=ExtResource("15_g22ia")]
 transform = Transform3D(-1.5, 0, 1.31134e-07, 0, 1.5, 0, -1.31134e-07, 0, -1.5, -1.29989, 0.508199, -7.41112)
+
+[node name="FlowerPainting2" parent="." instance=ExtResource("16_5ajhp")]
+transform = Transform3D(1, 0, 0, 0, -0.33555, 0.942022, 0, -0.942022, -0.33555, -1.08921, 2.33706, -6.79664)

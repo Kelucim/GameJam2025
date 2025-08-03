@@ -1833,6 +1833,32 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": 0
 }
+},
+"nodes": {
+"PATH:Armature/Skeleton3D/5888c6dcbc2fc2ef3a1860d3": {
+"mesh_instance/cast_shadow": 0
+},
+"PATH:Armature/Skeleton3D/5888c6dcbc2fc2ef3a1860d3_001": {
+"mesh_instance/cast_shadow": 0
+},
+"PATH:Armature/Skeleton3D/5888c6febc2fc2ef3a1860d5": {
+"mesh_instance/cast_shadow": 0
+},
+"PATH:Armature/Skeleton3D/Cube_006": {
+"mesh_instance/cast_shadow": 0
+},
+"PATH:Armature/Skeleton3D/Cube_008": {
+"mesh_instance/cast_shadow": 0
+},
+"PATH:Armature/Skeleton3D/Cube_009": {
+"mesh_instance/cast_shadow": 0
+},
+"PATH:Armature/Skeleton3D/Cube_010": {
+"mesh_instance/cast_shadow": 0
+},
+"PATH:Armature/Skeleton3D/Cylinder": {
+"mesh_instance/cast_shadow": 0
+}
 }
 }
 blender/nodes/visible=0
