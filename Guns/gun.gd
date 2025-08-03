@@ -22,7 +22,7 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if (ammo == 0 or Input.is_action_just_pressed("reload")) and !reloading:
+	if (ammo == 0 or Input.is_action_just_pressed("reload")) and !reloading and can_shoot:
 		reloading = true
 		hand_animations.play_reload()
 		reload_audio.play()
