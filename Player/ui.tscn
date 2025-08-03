@@ -47,7 +47,6 @@ layout_mode = 2
 
 [node name="PauseMenu" type="Control" parent="."]
 process_mode = 2
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -105,6 +104,22 @@ scrollable = false
 tick_count = 100
 ticks_on_borders = true
 
+[node name="Label2" type="Label" parent="PauseMenu/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Volume:"
+
+[node name="VolumeSlider" type="HSlider" parent="PauseMenu/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = -80.0
+max_value = 0.0
+value = -10.0
+scrollable = false
+tick_count = 80
+ticks_on_borders = true
+
 [connection signal="pressed" from="PauseMenu/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
 [connection signal="value_changed" from="PauseMenu/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="PauseMenu/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]

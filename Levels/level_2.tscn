@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://tnoe6hb5cag5" path="res://Player/player_ghost.tscn" id="3_fbld2"]
 [ext_resource type="PackedScene" uid="uid://crce5nrry2wp0" path="res://Player/ui.tscn" id="4_s275v"]
 [ext_resource type="PackedScene" uid="uid://c8bg6d80sfhr6" path="res://Levels/LevelEnviroments/level_2_enviroment.tscn" id="5_pml6m"]
-[ext_resource type="Environment" uid="uid://8v7r54ssiajg" path="res://Levels/level_enviroment.tres" id="6_fbld2"]
+[ext_resource type="Environment" uid="uid://8v7r54ssiajg" path="res://Levels/level_enviroment_node.tres" id="6_fbld2"]
 [ext_resource type="PackedScene" uid="uid://dbfwgliq2746w" path="res://Enemies/enemy.tscn" id="7_s275v"]
 [ext_resource type="AudioStream" uid="uid://bymxihjfckae2" path="res://Levels/LevelAssets/Audio/bass-guitar-death-metal-loop-240-bpm-101327.mp3" id="8_pml6m"]
 

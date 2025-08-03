@@ -31,7 +31,7 @@ height = 0.5
 
 [node name="ExitDoor" parent="." instance=ExtResource("1_l3fty")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0.5, -17.5)
-next_scene = "res://Levels/level_1.tscn"
+next_scene = "res://Levels/level_5.tscn"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -243,7 +243,7 @@ transform = Transform3D(-1.2, -2.52117e-08, 1.68407e-07, 3.87126e-08, 1.11531, 0
 transform = Transform3D(0.00591208, -0.111708, 1.49582, -1.01303, 1.10287, 0.0863662, -1.10623, -1.01055, -0.0710952, -2.40767, 1.74901, -4.09796)
 
 [node name="tv2" parent="." instance=ExtResource("9_uel18")]
-transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 1.16501, 1.86357, -7.50607)
+transform = Transform3D(-2.62254e-08, 2.74642e-10, -0.6, 0.00628307, 0.599967, 0, 0.599967, -0.00628307, -2.62268e-08, 1.16501, 1.86357, -7.50607)
 
 [node name="fridge" parent="." instance=ExtResource("11_7ba6b")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.899318, 1.508, -15.8731)

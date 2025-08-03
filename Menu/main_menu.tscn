@@ -54,26 +54,27 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Play"
 
-[node name="MarginContainer" type="MarginContainer" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_right = 100
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 51
 text = "Volume:"
 
-[node name="HSlider" type="HSlider" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 180
+theme_override_constants/margin_right = 180
+
+[node name="VolimeSlider" type="HSlider" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
 min_value = -80.0
 max_value = 0.0
 value = -10.0
+scrollable = false
+tick_count = 80
+ticks_on_borders = true
 
 [node name="Control" type="Control" parent="MMUI/MarginContainer/HSplitContainer/VBoxContainer"]
 layout_mode = 2
@@ -130,4 +131,4 @@ stream = ExtResource("5_fw3rq")
 autoplay = true
 
 [connection signal="pressed" from="MMUI/MarginContainer/HSplitContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="value_changed" from="MMUI/MarginContainer/HSplitContainer/VBoxContainer/MarginContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="MMUI/MarginContainer/HSplitContainer/VBoxContainer/MarginContainer/VolimeSlider" to="." method="_on_h_slider_value_changed"]

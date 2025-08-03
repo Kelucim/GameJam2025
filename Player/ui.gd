@@ -1,9 +1,13 @@
 extends Control
 
+@onready var master_audio_bus = AudioServer.get_bus_index("Master")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$PauseMenu.visible = false
 	%HSlider.value = GlobalVar.mouse_sensitivity
+	%VolumeSlider.value = GlobalVar.game_volume
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
@@ -74,3 +78,8 @@ func _on_main_menu_button_pressed() -> void:
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file("res://Menu/main_menu.tscn")
+
+
+func _on_volume_slider_value_changed(value: float) -> void:
+	GlobalVar.game_volume = value
+	AudioServer.set_bus_volume_db(master_audio_bus, value)

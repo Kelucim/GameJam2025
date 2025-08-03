@@ -27,6 +27,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.454242)
 stream = ExtResource("4_2hk77")
 
 [node name="PlayerViewmodel" parent="." instance=ExtResource("4_g0q6x")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.168848, -1.70903, 0.230257)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.169, -1.7, 0.23)
 
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
