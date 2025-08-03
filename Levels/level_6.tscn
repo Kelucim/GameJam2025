@@ -35,7 +35,7 @@ autoplay = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99347, 1.05711, -1.16498)
 
 [node name="Enemy2" parent="." instance=ExtResource("7_rolfb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99347, 1.05711, -12.3059)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99347, 1.05711, -6.60343)
 
 [node name="Enemy3" parent="." instance=ExtResource("7_rolfb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.16915, 0.997656, 0.377864)

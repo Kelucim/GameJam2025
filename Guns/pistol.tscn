@@ -29,4 +29,10 @@ stream = ExtResource("4_2hk77")
 [node name="PlayerViewmodel" parent="." instance=ExtResource("4_g0q6x")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.169, -1.7, 0.23)
 
+[node name="CanShootTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.167
+one_shot = true
+
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
+[connection signal="timeout" from="CanShootTimer" to="." method="_on_can_shoot_timer_timeout"]

@@ -39,7 +39,7 @@ size = Vector3(1.5, 1.8, 0.5)
 
 [node name="ExitDoor" parent="." instance=ExtResource("1_v5ca5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0.5, -17.5)
-next_scene = "res://Levels/level_1.tscn"
+next_scene = "res://Levels/level_7.tscn"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

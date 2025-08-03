@@ -10,6 +10,7 @@ extends Node3D
 @onready var blood_particles : PackedScene = preload("res://Player/blood_particles.tscn")
 @onready var hand_animations : player_animation_node = $PlayerViewmodel
 
+var can_shoot := true
 var ammo : int
 var reloading : bool = false
 
@@ -28,7 +29,7 @@ func _process(_delta: float) -> void:
 		%ReloadTimer.start()
 		print_debug("reloading")
 	
-	if !reloading:
+	if !reloading and can_shoot:
 		if is_automatic:
 			if Input.is_action_pressed("attack"):
 				shoot()
@@ -38,6 +39,8 @@ func _process(_delta: float) -> void:
 	
 
 func shoot():
+	can_shoot = false
+	%CanShootTimer.start()
 	hand_animations.play_shoot()
 	gunshoot_audio.play()
 	ammo = ammo-1
@@ -67,3 +70,7 @@ func play_walking_animation():
 func stop_walking_animation():
 	pass
 	hand_animations.stop_walking()
+
+
+func _on_can_shoot_timer_timeout() -> void:
+	can_shoot = true

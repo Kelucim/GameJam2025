@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://5f12gr76gjp0"]
+
+[ext_resource type="Script" uid="uid://dq7pxm17rth7q" path="res://Levels/level.gd" id="1_sdkrb"]
+[ext_resource type="PackedScene" uid="uid://crce5nrry2wp0" path="res://Player/ui.tscn" id="2_krg5q"]
+[ext_resource type="PackedScene" uid="uid://dsiesba77e41y" path="res://Player/player.tscn" id="3_gljo5"]
+[ext_resource type="Environment" uid="uid://8v7r54ssiajg" path="res://Levels/level_enviroment_node.tres" id="5_iv344"]
+[ext_resource type="PackedScene" uid="uid://tnoe6hb5cag5" path="res://Player/player_ghost.tscn" id="6_jmbbd"]
+[ext_resource type="PackedScene" uid="uid://dbfwgliq2746w" path="res://Enemies/enemy.tscn" id="7_hoj1y"]
+[ext_resource type="AudioStream" uid="uid://bymxihjfckae2" path="res://Levels/LevelAssets/Audio/bass-guitar-death-metal-loop-240-bpm-101327.mp3" id="8_0y6jj"]
+[ext_resource type="PackedScene" uid="uid://bynivsdqhway" path="res://Levels/LevelEnviroments/level_7_enviroment.tscn" id="8_sdkrb"]
+
+[node name="Level1" type="Node" node_paths=PackedStringArray("player_node", "player_ghost_node")]
+script = ExtResource("1_sdkrb")
+number_of_enemies = 5
+player_node = NodePath("Player")
+player_ghost_node = NodePath("PlayerGhost")
+current_level = "res://Levels/level_7.tscn"
+
+[node name="UI" parent="." instance=ExtResource("2_krg5q")]
+
+[node name="Player" parent="." instance=ExtResource("3_gljo5")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51445, 1.5598)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("5_iv344")
+
+[node name="PlayerGhost" parent="." instance=ExtResource("6_jmbbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.589, 2.175)
+
+[node name="Enemy1" parent="." instance=ExtResource("7_hoj1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18798, 1.28912, -13.579)
+
+[node name="Enemy2" parent="." instance=ExtResource("7_hoj1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.54302, 1.24999, -11.5336)
+
+[node name="Enemy3" parent="." instance=ExtResource("7_hoj1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.07834, 1.28912, -13.6436)
+
+[node name="Enemy4" parent="." instance=ExtResource("7_hoj1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.03762, 1.24865, -14.038)
+
+[node name="Enemy5" parent="." instance=ExtResource("7_hoj1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.81028, 1.24865, -12.4075)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_0y6jj")
+volume_db = -10.0
+autoplay = true
+
+[node name="Level" parent="." instance=ExtResource("8_sdkrb")]
