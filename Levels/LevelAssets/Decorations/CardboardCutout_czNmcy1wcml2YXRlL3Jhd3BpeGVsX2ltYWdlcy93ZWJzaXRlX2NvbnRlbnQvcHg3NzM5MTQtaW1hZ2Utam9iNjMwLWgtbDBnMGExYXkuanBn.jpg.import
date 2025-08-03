@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://1qeicm2p4auo"
+path.s3tc="res://.godot/imported/CardboardCutout_czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvcHg3NzM5MTQtaW1hZ2Utam9iNjMwLWgtbDBnMGExYXkuanBn.jpg-b00539c1a0010cad11ba741214a33325.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "331be0e1f8135e95319e9fee339cd413"
+}
+
+[deps]
+
+source_file="res://Levels/LevelAssets/Decorations/CardboardCutout_czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvcHg3NzM5MTQtaW1hZ2Utam9iNjMwLWgtbDBnMGExYXkuanBn.jpg"
+dest_files=["res://.godot/imported/CardboardCutout_czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvcHg3NzM5MTQtaW1hZ2Utam9iNjMwLWgtbDBnMGExYXkuanBn.jpg-b00539c1a0010cad11ba741214a33325.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
