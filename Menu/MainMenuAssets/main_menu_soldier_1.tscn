@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbvu3s2y3ugvd"]
+
+[ext_resource type="PackedScene" uid="uid://bgqccen66763a" path="res://Menu/MainMenuAssets/MainMenuSoldier1.glb" id="1_rxu3s"]
+[ext_resource type="Script" uid="uid://r0aduueffeas" path="res://main_menu_soldier_1.gd" id="2_xxm35"]
+
+[node name="MainMenuSoldier1" instance=ExtResource("1_rxu3s")]
+script = ExtResource("2_xxm35")

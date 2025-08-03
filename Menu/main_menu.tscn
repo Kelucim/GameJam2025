@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d2tcrkoorqc63"]
+[gd_scene load_steps=17 format=3 uid="uid://d2tcrkoorqc63"]
 
 [ext_resource type="PackedScene" uid="uid://ds4lmuccy0eua" path="res://Levels/LevelAssets/Wall.blend" id="1_ci1se"]
 [ext_resource type="Script" uid="uid://br0ixfudn8q8a" path="res://Menu/main_menu.gd" id="1_dtkyu"]
@@ -11,7 +11,9 @@
 [ext_resource type="AudioStream" uid="uid://cte7ifpcy1gn4" path="res://Menu/MainMenuAssets/game-background-sound-3423362.mp3" id="8_ws7s4"]
 [ext_resource type="PackedScene" uid="uid://dm0hx3lls3qs1" path="res://Levels/LevelAssets/Furniture/table.blend" id="9_ywk15"]
 [ext_resource type="PackedScene" uid="uid://cjoc4q1g5l414" path="res://Levels/LevelAssets/Furniture/chair.blend" id="10_ws7s4"]
-[ext_resource type="PackedScene" uid="uid://7k67mp4o07f0" path="res://Menu/MainMenuAssets/main_menu.tscn" id="12_fduiw"]
+[ext_resource type="PackedScene" uid="uid://bbvu3s2y3ugvd" path="res://Menu/MainMenuAssets/main_menu_soldier_1.tscn" id="12_dqyvv"]
+[ext_resource type="PackedScene" uid="uid://c22s3lfkollds" path="res://Menu/MainMenuAssets/main_menu_soldier_2.tscn" id="13_o4wy8"]
+[ext_resource type="PackedScene" uid="uid://cxh5o8o2ai04x" path="res://Menu/MainMenuAssets/MainMenu.glb" id="14_o4wy8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ci1se"]
 size = Vector3(5, 5, 0.5)
@@ -163,8 +165,14 @@ stream = ExtResource("8_ws7s4")
 volume_db = -10.0
 autoplay = true
 
-[node name="MainMenu" parent="." instance=ExtResource("12_fduiw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.09302, -1.5461, 0.946909)
+[node name="MainMenuSoldier3" parent="." instance=ExtResource("12_dqyvv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.581781, -1.58648, 1.3492)
+
+[node name="MainMenuSoldier2" parent="." instance=ExtResource("13_o4wy8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.687219, -1.5997, 1.37532)
+
+[node name="MainMenu" parent="." instance=ExtResource("14_o4wy8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.558655, -1.62322, 1.2436)
 
 [connection signal="pressed" from="MMUI/MarginContainer/HSplitContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="value_changed" from="MMUI/MarginContainer/HSplitContainer/MarginContainer/VBoxContainer/HBoxContainer/VolimeSlider" to="." method="_on_h_slider_value_changed"]
