@@ -27,10 +27,8 @@ func _physics_process(delta: float) -> void:
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
 	if input_dir != Vector2.ZERO and $WalkingAudioStream.playing == false:
-		#$PlayerCamera/Pistol.play_walking_animation()
 		$WalkingAudioStream.play()
 	elif input_dir == Vector2.ZERO:
-		#$PlayerCamera/Pistol.stop_walking_animation()
 		$WalkingAudioStream.stop()
 	
 	
