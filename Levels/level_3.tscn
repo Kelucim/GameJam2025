@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cywnshvh41omg"]
+[gd_scene load_steps=10 format=3 uid="uid://cywnshvh41omg"]
 
 [ext_resource type="Script" uid="uid://dq7pxm17rth7q" path="res://Levels/level.gd" id="1_fa81k"]
 [ext_resource type="PackedScene" uid="uid://crce5nrry2wp0" path="res://Player/ui.tscn" id="2_ck3gp"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dbfwgliq2746w" path="res://Enemies/enemy.tscn" id="7_2urlj"]
 [ext_resource type="PackedScene" uid="uid://cq81i8d0guea" path="res://Levels/LevelEnviroments/level_3_enviroment.tscn" id="7_ay5qi"]
 [ext_resource type="PackedScene" uid="uid://rkhyv7j0if5y" path="res://Levels/LevelAssets/Audio/InGameMusic.tscn" id="8_fa81k"]
+[ext_resource type="PackedScene" uid="uid://dnpysx5et7pla" path="res://Enemies/Audio/he_here.tscn" id="9_ck3gp"]
 
 [node name="Level3" type="Node" node_paths=PackedStringArray("player_node", "player_ghost_node")]
 script = ExtResource("1_fa81k")
@@ -44,3 +45,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.12818, 1.05711, -15.9934)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42791, 1.05711, -16.658)
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("8_fa81k")]
+
+[node name="HeHere" parent="." instance=ExtResource("9_ck3gp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.60922, 1.63516, -4.52769)

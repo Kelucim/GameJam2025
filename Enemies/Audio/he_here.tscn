@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnpysx5et7pla"]
+
+[ext_resource type="AudioStream" uid="uid://c0kgowlhl5sti" path="res://Enemies/Audio/IThinkHesHere.wav" id="1_ktlrx"]
+
+[node name="HeHere" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_ktlrx")
+autoplay = true

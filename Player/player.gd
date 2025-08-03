@@ -20,8 +20,6 @@ func _ready() -> void:
 	
 func _physics_process(delta: float) -> void:
 	
-	print_debug(mouse_sensitivity)
-	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -59,7 +57,6 @@ func _process(_delta: float) -> void:
 	
 func player_lost_health(damage_taken):
 	health -= damage_taken
-	print_debug("got hit")
 	$HitAudio.play()
 	get_tree().call_group("game_ui","change_health", health)
 	if health <= 0:

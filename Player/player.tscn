@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bwpmbvt3os8oh" path="res://Guns/pistol.tscn" id="2_onrkg"]
 [ext_resource type="AudioStream" uid="uid://bxpk87d0257wj" path="res://Player/FootSteps.mp3" id="3_btcbx"]
 [ext_resource type="AudioStream" uid="uid://bkcvj37io8aqk" path="res://Player/PlayerHurt.mp3" id="4_gwnis"]
-[ext_resource type="AudioStream" uid="uid://1sbstn0uedte" path="res://Enemies/BulletMiss.mp3" id="5_k53q1"]
+[ext_resource type="AudioStream" uid="uid://1sbstn0uedte" path="res://Enemies/Audio/BulletMiss.mp3" id="5_k53q1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 radius = 0.4

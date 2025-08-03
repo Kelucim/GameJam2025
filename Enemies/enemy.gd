@@ -7,6 +7,11 @@ class_name enemy
 @export var Animations : enemy_animaton_node
 @export var got_hit_sfx : AudioStreamPlayer3D
 
+var hurt1 = preload("res://Enemies/Audio/Hurt1.wav")
+var hurt2 = preload("res://Enemies/Audio/Hurt2.wav")
+var hurt3 = preload("res://Enemies/Audio/Hurt3.wav")
+var hurt4 = preload("res://Enemies/Audio/Hurt4.wav")
+
 var health : int = 1
 var player_los_check_position
 var player_ghost_los_check_position
@@ -34,14 +39,25 @@ func _physics_process(delta: float) -> void:
 	if %WeaponRaycast.is_colliding() && %PlayerWeaponRaycast.is_colliding():
 		if (%WeaponRaycast.get_collider() is player_ghost and %PlayerWeaponRaycast.get_collider() is player) and %AttackTimer.is_stopped():
 			player_hitbox = %PlayerWeaponRaycast.get_collider()
-			print_debug("see you")
 			%AttackTimer.start()
 	
 	move_and_slide()
 
 func lose_healt(how_much : int):
 	health -= how_much
+	var what_sound : int
+	what_sound = randi_range(1,4)
+	if what_sound == 1:
+		got_hit_sfx.stream = hurt1
+	elif what_sound == 2:
+		got_hit_sfx.stream = hurt2
+	elif what_sound == 3:
+		got_hit_sfx.stream = hurt3
+	elif what_sound == 4:
+		got_hit_sfx.stream = hurt4
+		
 	got_hit_sfx.play()
+	
 	if health <= 0:
 		died()
 
@@ -57,7 +73,6 @@ func target_position(target, player_ghost_position):
 	player_ghost_los_check_position = Vector3(player_ghost_los_check_position.x, player_ghost_los_check_position.y - 1.2, player_ghost_los_check_position.z)
 
 func _on_attack_timer_timeout() -> void:
-	print_debug("Are ja dead")
 	is_still_colliding()
 
 func is_still_colliding():

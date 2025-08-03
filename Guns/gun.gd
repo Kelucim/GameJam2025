@@ -27,7 +27,6 @@ func _process(_delta: float) -> void:
 		hand_animations.play_reload()
 		reload_audio.play()
 		%ReloadTimer.start()
-		print_debug("reloading")
 	
 	if !reloading and can_shoot:
 		if is_automatic:
@@ -51,14 +50,12 @@ func shoot():
 			get_parent().get_parent().add_sibling(blood_instance)
 			var target : hit_box= %RayCast.get_collider()
 			target.got_hit(damage)
-	print_debug("shoot")
 	update_ammo_count()
 
 
 func _on_reload_timer_timeout() -> void:
 	reloading = false
 	ammo = max_ammo
-	print_debug("reloaded")
 	update_ammo_count()
 
 func update_ammo_count():
