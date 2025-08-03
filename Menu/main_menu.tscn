@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d2tcrkoorqc63"]
+[gd_scene load_steps=15 format=3 uid="uid://d2tcrkoorqc63"]
 
 [ext_resource type="PackedScene" uid="uid://ds4lmuccy0eua" path="res://Levels/LevelAssets/Wall.blend" id="1_ci1se"]
 [ext_resource type="Script" uid="uid://br0ixfudn8q8a" path="res://Menu/main_menu.gd" id="1_dtkyu"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://cte7ifpcy1gn4" path="res://Menu/MainMenuAssets/game-background-sound-3423362.mp3" id="8_ws7s4"]
 [ext_resource type="PackedScene" uid="uid://dm0hx3lls3qs1" path="res://Levels/LevelAssets/Furniture/table.blend" id="9_ywk15"]
 [ext_resource type="PackedScene" uid="uid://cjoc4q1g5l414" path="res://Levels/LevelAssets/Furniture/chair.blend" id="10_ws7s4"]
+[ext_resource type="PackedScene" uid="uid://7k67mp4o07f0" path="res://Menu/MainMenuAssets/main_menu.tscn" id="12_fduiw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ci1se"]
 size = Vector3(5, 5, 0.5)
@@ -102,7 +103,13 @@ expand_mode = 2
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.96806, 0.250718, 0, -0.250718, 0.96806, 0, 1.12741, 2.13581)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76308, 1.17086)
+shadow_enabled = true
+omni_range = 3.0
+
 [node name="Node3D" type="Node3D" parent="."]
+visible = false
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24549, 3.33784)
@@ -127,16 +134,26 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.316
 [node name="Wall6" parent="Node3D" instance=ExtResource("1_ci1se")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, -0.5, 2.384)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76308, 1.17086)
-shadow_enabled = true
-omni_range = 3.0
-
 [node name="Ceiling" parent="Node3D" instance=ExtResource("6_rw3mj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0160497, 2.99487, 0)
 
 [node name="Floor2" parent="Node3D" instance=ExtResource("6_cn2sd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49502, 0)
+
+[node name="MountainLandscapePainting" parent="Node3D" instance=ExtResource("8_vv7ca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114572, 1.19378, -0.966652)
+
+[node name="table" parent="Node3D" instance=ExtResource("9_ywk15")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.255203, -0.49502, -0.338382)
+
+[node name="chair" parent="Node3D" instance=ExtResource("10_ws7s4")]
+transform = Transform3D(0.169076, 0, 1.49044, 0, 1.5, 0, -1.49044, 0, 0.169076, -1.3293, -0.49502, -0.322907)
+
+[node name="chair2" parent="Node3D" instance=ExtResource("10_ws7s4")]
+transform = Transform3D(0.678582, 0, -1.33773, 0, 1.5, 0, 1.33773, 0, 0.678582, 0.894809, -0.49502, -0.456993)
+
+[node name="chair3" parent="Node3D" instance=ExtResource("10_ws7s4")]
+transform = Transform3D(-1.48496, 0, -0.211896, 0, 1.5, 0, 0.211896, 0, -1.48496, -0.157273, -0.49502, 0.28587)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ci1se")
@@ -146,20 +163,8 @@ stream = ExtResource("8_ws7s4")
 volume_db = -10.0
 autoplay = true
 
-[node name="MountainLandscapePainting" parent="." instance=ExtResource("8_vv7ca")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114572, 1.19378, -0.966652)
-
-[node name="table" parent="." instance=ExtResource("9_ywk15")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.255203, -0.49502, -0.338382)
-
-[node name="chair" parent="." instance=ExtResource("10_ws7s4")]
-transform = Transform3D(0.169076, 0, 1.49044, 0, 1.5, 0, -1.49044, 0, 0.169076, -1.3293, -0.49502, -0.322907)
-
-[node name="chair2" parent="." instance=ExtResource("10_ws7s4")]
-transform = Transform3D(0.678582, 0, -1.33773, 0, 1.5, 0, 1.33773, 0, 0.678582, 0.894809, -0.49502, -0.456993)
-
-[node name="chair3" parent="." instance=ExtResource("10_ws7s4")]
-transform = Transform3D(-1.48496, 0, -0.211896, 0, 1.5, 0, 0.211896, 0, -1.48496, -0.157273, -0.49502, 0.28587)
+[node name="MainMenu" parent="." instance=ExtResource("12_fduiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.09302, -1.5461, 0.946909)
 
 [connection signal="pressed" from="MMUI/MarginContainer/HSplitContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="value_changed" from="MMUI/MarginContainer/HSplitContainer/MarginContainer/VBoxContainer/HBoxContainer/VolimeSlider" to="." method="_on_h_slider_value_changed"]
